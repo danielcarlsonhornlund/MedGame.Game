@@ -1,0 +1,59 @@
+﻿<Window x:Class="MedGame.UI.WPF.SignInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+         Title="SignInWindow" Height="668" Width="420" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/Login/bakgLogin420x668.jpg" Stretch="Fill" />
+    </Window.Background>
+
+
+    <Grid>
+        <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="450"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="95"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="TextBoxEmail" TextAlignment="Center" Grid.Row="1" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch" TabIndex="0"/>
+                <PasswordBox x:Name="TextBoxPassword" Grid.Row="3" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Stretch" TabIndex="1" />
+
+
+            </Grid>
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="93"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="93"/>
+                    <ColumnDefinition Width="95"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="ButtonSignIn" Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" Content="Sign in" HorizontalAlignment="Stretch" TabIndex="2" Click="ButtonSignIn_Click"/>
+                <Button x:Name="ButtonSignUp" Grid.Column="3" Grid.Row="1" VerticalAlignment="Stretch" Content="Sign up" HorizontalAlignment="Stretch" TabIndex="3" Click="ButtonSignUp_Click" />
+                <Label x:Name="LabelLoginWithFacebook" Content="Sign in with Facebook" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" VerticalAlignment="Top" Foreground="blue" MouseLeave="LabelLoginWithFacebook_MouseLeave" PreviewMouseLeftButtonUp="LabelLoginWithFacebook_PreviewMouseLeftButtonUp" />
+            </Grid>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

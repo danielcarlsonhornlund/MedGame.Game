@@ -1,0 +1,18 @@
+﻿<Window x:Class="MedGame.UI.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedGame.UI.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="760.111" Width="525">
+    <Grid>
+        <Button Content="Login" x:Name="ButtonLogin" HorizontalAlignment="Left" Margin="30,245,0,0" VerticalAlignment="Top" Width="75" Click="ButtonLogin_Click"/>
+        <Button Content="Logout" x:Name="ButtonLogout" HorizontalAlignment="Left" Margin="388,245,0,0" VerticalAlignment="Top" Width="75" Click="ButtonLogout_Click"/>
+        <Button Content="Play" x:Name="ButtonPlay" HorizontalAlignment="Left" Margin="218,245,0,0" VerticalAlignment="Top" Width="75" Click="ButtonPlay_Click"/>
+        <Label Content="TotalMinutesMeditatedToday" HorizontalAlignment="Left" Margin="30,299,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelPlayer" Content="Label" HorizontalAlignment="Left" Margin="226,360,0,0" VerticalAlignment="Top" Width="137" Height="296"/>
+        <Label x:Name="LabelPlayerInfo" Content="Player Info" HorizontalAlignment="Left" Height="296" Margin="30,360,0,0" VerticalAlignment="Top" Width="191"/>
+
+    </Grid>
+</Window>
