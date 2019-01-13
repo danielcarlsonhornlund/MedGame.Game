@@ -4,69 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-         Title="SignInWindow" Height="668" Width="420" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
+         Title="SignInWindow" Height="568" Width="320" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Window.Background>
         <ImageBrush ImageSource="Images/common/background.png" Stretch="Fill" />
     </Window.Background>
 
-
-    <Grid>
-        <StackPanel>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="50"/>
-
-                </Grid.RowDefinitions>
-                <Image  Grid.Row="1"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/signin/GiveBirthTitle.png"  />
-                <Image  Grid.Row="2"  VerticalAlignment="Center" Height="300" HorizontalAlignment="Stretch"  Source="Images/signin/birdandbaby.png"  />
-                <Image  Grid.Row="3"  VerticalAlignment="Center" HorizontalAlignment="Stretch"  Source="Images/signin/buddhainyou.png" />
-            </Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="50"/>
-                </Grid.ColumnDefinitions>
-
-
-                <Image  Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Center"  Source="Images/signin/greenrectangle.png" Grid.Column="1" Margin="0,20,0,0"/>
-                <StackPanel Grid.Column="1">
-
-
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="40"/>
-                            <ColumnDefinition Width="20"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="20"/>
-                            <ColumnDefinition Width="40"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="10"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="20"/>
-                        </Grid.RowDefinitions>
-                        <TextBox x:Name="TextBoxEmail" TextAlignment="Center" Grid.Row="4"  Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0" Margin="0,15,0,5" Grid.RowSpan="2"/>
-                        <PasswordBox x:Name="TextBoxPassword" Grid.Row="6"  Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0" Margin="0,10,0,0"/>
-
-                        <Grid Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="1">
-                            <Button x:Name="ButtonSignIn" Content="Sign in" HorizontalAlignment="Left" TabIndex="2" Click="ButtonSignIn_Click" Width="80" Margin="-2,70,0,-70" />
-                            <Button x:Name="ButtonSignUp" Content="Sign up" HorizontalAlignment="Right" TabIndex="3" Click="ButtonSignUp_Click" Width="80" Margin="0,70,4,-70" />
-                        </Grid>
-                        <Label Content="Sign in or signup" HorizontalContentAlignment="Center" FontSize="22" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"  Grid.RowSpan="2"/>
-                    </Grid>
-                </StackPanel>
-            </Grid>
+    <StackPanel>
+        <StackPanel Margin="20,20,20,0">
+            <Image VerticalAlignment="Stretch" HorizontalAlignment="Center"  Source="Images/signin/GiveBirthTitle.png" Height="77"   />
+            <Image VerticalAlignment="Stretch" HorizontalAlignment="Center"  Source="/images/signin/birdandbabycropped.png" Margin="10" />
+            <Image VerticalAlignment="Center" HorizontalAlignment="Stretch"  Source="Images/signin/buddhainyou.png" Height="66" Margin="0,-30,0,0" />
         </StackPanel>
 
-    </Grid>
+        <Image VerticalAlignment="Center" HorizontalAlignment="Stretch"  Source="Images/signin/greenrectangle.png" Margin="50,10,50,50" />
+        <Grid Margin="0,-220,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="56"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Label Content="Sign in or signup" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
+            <TextBox x:Name="TextBoxEmail" TextAlignment="Center"  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0"/>
+            <PasswordBox x:Name="TextBoxPassword" Grid.Row="4"  Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0"/>
+
+            <Grid Grid.Row="6" Grid.Column="1" Margin="0,0,0,20">
+                <Button x:Name="ButtonSignIn" Content="Sign in" HorizontalAlignment="Left" TabIndex="2" Click="ButtonSignIn_Click" Width="95" Height="25" BorderThickness="0" Background="LightGreen" Foreground="DarkGreen"/>
+                <Button x:Name="ButtonSignUp" Content="Sign up" HorizontalAlignment="Right" TabIndex="3" Click="ButtonSignUp_Click" Width="95"  Height="25" BorderThickness="0" Background="LightGreen" Foreground="DarkGreen"/>
+            </Grid>
+        </Grid>
+        <StackPanel/>
+    </StackPanel>
 </Window>

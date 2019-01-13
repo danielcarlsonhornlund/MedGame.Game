@@ -185,6 +185,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="SignInWindowXamlOld.txt" />
     <Resource Include="images\Common\background.png" />
     <Resource Include="images\Common\budda icon.png" />
     <Resource Include="images\Common\loadingcircle.png" />
@@ -237,6 +238,7 @@
     <Resource Include="images\SignIn\Sign up Button.png" />
     <Resource Include="images\SignIn\SignInButton.png" />
     <Resource Include="images\SignIn\your path vit.png" />
+    <Resource Include="images\SignIn\birdandbabycropped.png" />
     <Content Include="media\Level1d1.mp3" />
     <Content Include="media\Level1d2.mp3" />
     <Content Include="media\Level1d3.mp3" />
