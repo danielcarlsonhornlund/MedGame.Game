@@ -3,6 +3,7 @@ using MedGame.Models;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,18 @@ namespace MedGame.Services
         public static string UrlFacebook { get; set; } = "http://medgame.azurewebsites.net/api/facebook/signin";
 
         public string Url { get; set; } = "https://localhost:44350/api/player";
+
+        public bool CheckForInternetConnection()
+        {
+            try
+            {
+                return new Ping().Send("https://localhost:44350/api/start").Status == IPStatus.Success;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         public async Task<HttpResponseMessage> SignIn(string email, string password)
         {

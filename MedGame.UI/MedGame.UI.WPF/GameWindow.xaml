@@ -7,7 +7,7 @@
         mc:Ignorable="d"
          Title="SignInWindow" Height="668" Width="420" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Background>
-        <ImageBrush ImageSource="images/common/bakgrund.png" Stretch="Fill" />
+        <ImageBrush ImageSource="images/common/background.png" Stretch="Fill" />
     </Window.Background>
 
     <StackPanel>

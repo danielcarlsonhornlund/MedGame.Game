@@ -2,6 +2,7 @@
 using MedGame.Models;
 using MedGame.Services;
 using Newtonsoft.Json;
+using System;
 using System.Net.Http;
 using System.Windows;
 
@@ -14,14 +15,20 @@ namespace MedGame.UI.WPF
     {
         RESTClient RestClient = new RESTClient();
 
-
         public SignInWindow()
         {
             InitializeComponent();
 
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-
+            //if (!RestClient.CheckForInternetConnection())
+            //{
+            //    MessageBox.Show("Check your internet connection", "No connection found", MessageBoxButton.OK, MessageBoxImage.Information);
+            //    Environment.Exit(0);
+            //}
+            //else
+            //{
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+            //}
         }
 
         private async void ButtonSignIn_Click(object sender, RoutedEventArgs e)

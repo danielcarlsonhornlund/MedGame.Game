@@ -148,6 +148,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="images\XD version 1 för iphone5.xd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -183,24 +184,59 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="images\Common\Image1.png" />
-    <Resource Include="images\Common\bakgrund.png" />
-    <Resource Include="images\Common\hjul som ska snurra loading.png" />
-    <Resource Include="images\Common\loadingcircle3.gif" />
-    <Resource Include="images\Common\settings icon png-2.png" />
-    <Resource Include="images\Common\share icon-1.png" />
-    <Resource Include="images\Common\statistik mörk icon png-2.png" />
-    <Resource Include="images\Common\your path vit.png" />
-    <Resource Include="images\Main\buddha rensad.png" />
-    <Resource Include="images\Main\health meter 2.png" />
-    <Resource Include="images\Main\tankebubbla.png" />
-    <Resource Include="images\Play\playknappen.png" />
-    <Resource Include="images\SignIn\buttonLogin.jpg" />
-    <Resource Include="images\SignIn\login or sign up.png" />
-    <Resource Include="images\SignIn\stork och barn png.png" />
-    <Resource Include="images\Common\processmatare.png" />
+    <Resource Include="images\Common\background.png" />
+    <Resource Include="images\Common\budda icon.png" />
+    <Resource Include="images\Common\loadingcircle.png" />
+    <Resource Include="images\Common\play icon png.png" />
+    <Resource Include="images\Common\settings icon png.png" />
+    <Resource Include="images\Common\share icon2 png.png" />
+    <Resource Include="images\Common\statistik mörk icon png.png" />
+    <Resource Include="images\GameWindow\playButton.png" />
+    <Resource Include="images\MainPage\buddaBig.png" />
+    <Resource Include="images\MainPage\health meter.png" />
+    <Resource Include="images\MainPage\tankebubbla.png" />
+    <Resource Include="images\old\Bakgrund.jpg" />
+    <Resource Include="images\old\Main\buddha rensad.png" />
+    <Resource Include="images\old\Main\health meter 2.png" />
+    <Resource Include="images\old\Main\tankebubbla.png" />
+    <Resource Include="images\old\new\bakgrund-7.png" />
+    <Resource Include="images\old\new\buddha in you text png.png" />
+    <Resource Include="images\old\new\buddha rensad.png" />
+    <Resource Include="images\old\new\give birth to png.png" />
+    <Resource Include="images\old\new\grön ruta png.png" />
+    <Resource Include="images\old\new\hjul som ska snurra loading.png" />
+    <Resource Include="images\old\new\Line 1.png" />
+    <Resource Include="images\old\new\login png.png" />
+    <Resource Include="images\old\new\play icon png-1.png" />
+    <Resource Include="images\old\new\play icon png-2.png" />
+    <Resource Include="images\old\new\play icon png.png" />
+    <Resource Include="images\old\new\playknappen.png" />
+    <Resource Include="images\old\new\processmatare.png" />
+    <Resource Include="images\old\new\settings icon png-1.png" />
+    <Resource Include="images\old\new\settings icon png.png" />
+    <Resource Include="images\old\new\share icon-2.png" />
+    <Resource Include="images\old\new\share icon2 png.png" />
+    <Resource Include="images\old\new\sign in png.png" />
+    <Resource Include="images\old\new\statistik mörk icon png-1.png" />
+    <Resource Include="images\old\new\statistik mörk icon png.png" />
+    <Resource Include="images\old\Play\PlayButton.jpg" />
+    <Resource Include="images\old\Play\playknappen.png" />
+    <Resource Include="images\old\Sign Up\bakgSignUp.jpg" />
+    <Resource Include="images\old\Sign Up\bakgSignUp420x668.jpg" />
+    <Resource Include="images\old\Sign Up\buttonSignUp.png" />
+    <Resource Include="images\old\Sign Up\ButtonSignUpUp.jpg" />
+    <Resource Include="images\old\SignIn\buttonLogin.jpg" />
+    <Resource Include="images\old\SignIn\login or sign up.png" />
+    <Resource Include="images\old\SignIn\stork och barn png.png" />
+    <Resource Include="images\SignIn\birdandbaby.png" />
+    <Resource Include="images\SignIn\buddhainyou.png" />
+    <Resource Include="images\SignIn\GiveBirthTitle.png" />
+    <Resource Include="images\SignIn\greenrectangle.png" />
+    <Resource Include="images\SignIn\Line 1.png" />
+    <Resource Include="images\SignIn\Sign up Button.png" />
+    <Resource Include="images\SignIn\SignInButton.png" />
+    <Resource Include="images\SignIn\your path vit.png" />
     <Content Include="media\Level1d1.mp3" />
     <Content Include="media\Level1d2.mp3" />
     <Content Include="media\Level1d3.mp3" />
@@ -208,32 +244,10 @@
     <Content Include="media\Level1d5.mp3" />
     <Content Include="media\Level1d6.mp3" />
     <Content Include="media\Level1d7.mp3" />
-    <Resource Include="images\Bakgrund.jpg" />
-    <Resource Include="images\new\bakgrund-7.png" />
-    <Resource Include="images\new\buddha in you text png.png" />
-    <Resource Include="images\new\buddha rensad.png" />
-    <Resource Include="images\new\give birth to png.png" />
-    <Resource Include="images\new\grön ruta png.png" />
-    <Resource Include="images\new\hjul som ska snurra loading.png" />
-    <Resource Include="images\new\Line 1.png" />
-    <Resource Include="images\new\login png.png" />
-    <Resource Include="images\new\play icon png-1.png" />
-    <Resource Include="images\new\play icon png-2.png" />
-    <Resource Include="images\new\play icon png.png" />
-    <Resource Include="images\new\playknappen.png" />
-    <Resource Include="images\new\processmatare.png" />
-    <Resource Include="images\new\settings icon png-1.png" />
-    <Resource Include="images\new\settings icon png.png" />
-    <Resource Include="images\new\share icon-2.png" />
-    <Resource Include="images\new\share icon2 png.png" />
-    <Resource Include="images\new\sign in png.png" />
-    <Resource Include="images\new\statistik mörk icon png-1.png" />
-    <Resource Include="images\new\statistik mörk icon png.png" />
-    <Resource Include="images\Play\PlayButton.jpg" />
-    <Resource Include="images\Sign Up\bakgSignUp.jpg" />
-    <Resource Include="images\Sign Up\bakgSignUp420x668.jpg" />
-    <Resource Include="images\Sign Up\buttonSignUp.png" />
-    <Resource Include="images\Sign Up\ButtonSignUpUp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Common\processmatare.png" />
+    <Resource Include="images\SignIn\login or sign up.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
