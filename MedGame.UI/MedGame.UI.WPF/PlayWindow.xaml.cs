@@ -64,5 +64,12 @@ namespace MedGame.UI.WPF
             var appRoot = appPathMatcher.Match(exePath).Value;
             return appRoot;
         }
+
+        private void IconPlay_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MunkWindow munkWindow = new MunkWindow();
+            munkWindow.Show();
+            this.Close();
+        }
     }
 }

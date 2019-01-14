@@ -9,16 +9,31 @@
         <ImageBrush ImageSource="Images/common/background.png" Stretch="Fill" />
     </Window.Background>
 
-    <StackPanel>
-        <Grid>
 
+    <DockPanel>
+
+        <Grid DockPanel.Dock="Bottom">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="50"  />
             </Grid.RowDefinitions>
 
-            <Image x:Name="ButtonPlay" Grid.Row="2"  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/playWindow/playbutton.png" Margin="2,206,1,-356" PreviewMouseLeftButtonUp="ButtonPlay_PreviewMouseLeftButtonUp" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image x:Name="IconMunk" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/buddaicon.png"  />
+            <Image x:Name="IconPlay" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/playicon.png" PreviewMouseLeftButtonUp="IconPlay_PreviewMouseLeftButtonUp" />
+            <Image x:Name="IconStatistics" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/statisticsicon.png"  />
+            <Image x:Name="IconShare" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/shareicon.png"  />
+            <Image x:Name="IconSettings" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/settingsicon.png"  />
         </Grid>
-    </StackPanel>
+        <Image  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/playWindow/playbutton.png"/>
+
+    </DockPanel>
+
+
 </Window>
