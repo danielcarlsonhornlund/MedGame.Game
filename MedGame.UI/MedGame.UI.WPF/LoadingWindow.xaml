@@ -11,19 +11,13 @@
 
     <StackPanel>
         <Grid>
-
             <Grid.RowDefinitions>
-
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
-
             </Grid.RowDefinitions>
 
             <Image  Grid.Row="2"  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/common/loadingcircle.png" Margin="2,206,1,-356"  />
-
-
         </Grid>
     </StackPanel>
-
 </Window>

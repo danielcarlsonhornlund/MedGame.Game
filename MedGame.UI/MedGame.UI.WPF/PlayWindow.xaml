@@ -13,17 +13,12 @@
         <Grid>
 
             <Grid.RowDefinitions>
-
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
-
             </Grid.RowDefinitions>
 
-            <Image  Grid.Row="2"  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/playWindow/playbutton.png" Margin="2,206,1,-356"  />
-
-
+            <Image x:Name="ButtonPlay" Grid.Row="2"  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/playWindow/playbutton.png" Margin="2,206,1,-356" PreviewMouseLeftButtonUp="ButtonPlay_PreviewMouseLeftButtonUp" />
         </Grid>
     </StackPanel>
-
 </Window>

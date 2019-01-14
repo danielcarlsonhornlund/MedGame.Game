@@ -1,7 +1,10 @@
-﻿using System;
+﻿using MedGame.GameLogic;
+using MedGame.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,9 +22,47 @@ namespace MedGame.UI.WPF
     /// </summary>
     public partial class PlayWindow : Window
     {
+        private MediaPlayer MediaPlayer { get; set; }
+        bool isPlaying = false;
+
         public PlayWindow()
         {
             InitializeComponent();
+            MediaPlayer = new MediaPlayer();
+
+            string fileName = @"\media\level1d1.mp3";
+            string fullFilename = GetApplicationRoot() + fileName;
+            MediaPlayer.Open(new Uri(fullFilename));
+        }
+
+        private async void ButtonPlay_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            RESTClient restClient = new RESTClient();
+
+            if (isPlaying == false)
+            {
+                MediaPlayer.Play();
+                isPlaying = true;
+                
+                Game.StartMeditation();
+            }
+            else
+            {
+                MediaPlayer.Pause();
+                isPlaying = false;
+                Game.StopMeditation();
+
+                await restClient.Update(Game.Player);
+            }
+
+        }
+
+        public string GetApplicationRoot()
+        {
+            var exePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            Regex appPathMatcher = new Regex(@"(?<!fil)[A-Za-z]:\\+[\S\s]*?(?=\\+bin)");
+            var appRoot = appPathMatcher.Match(exePath).Value;
+            return appRoot;
         }
     }
 }
