@@ -101,6 +101,9 @@
     <Compile Include="LoadingCircleWindow.Designer.cs">
       <DependentUpon>LoadingCircleWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayWindow.xaml.cs">
+      <DependentUpon>PlayWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
     <Page Include="FacebookLoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PlayWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="LoadingWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

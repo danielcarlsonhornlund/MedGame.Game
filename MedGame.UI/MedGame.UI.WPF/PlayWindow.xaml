@@ -1,4 +1,4 @@
-﻿<Window x:Class="MedGame.UI.WPF.LoadingWindow"
+﻿<Window x:Class="MedGame.UI.WPF.PlayWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -20,7 +20,7 @@
 
             </Grid.RowDefinitions>
 
-            <Image  Grid.Row="2"  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/common/loadingcircle.png" Margin="2,206,1,-356"  />
+            <Image  Grid.Row="2"  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/playWindow/playbutton.png" Margin="2,206,1,-356"  />
 
 
         </Grid>

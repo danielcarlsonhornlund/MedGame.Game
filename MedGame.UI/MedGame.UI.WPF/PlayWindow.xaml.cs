@@ -15,25 +15,13 @@ using System.Windows.Shapes;
 namespace MedGame.UI.WPF
 {
     /// <summary>
-    /// Interaction logic for MunkWindow.xaml
+    /// Interaction logic for LoadingWindow.xaml
     /// </summary>
-    public partial class MunkWindow : Window
+    public partial class PlayWindow : Window
     {
-        public MunkWindow()
+        public PlayWindow()
         {
             InitializeComponent();
-        }
-
-        private void Image_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void IconPlay_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            PlayWindow playWindow = new PlayWindow();
-            playWindow.Show();
-            this.Close();
         }
     }
 }
