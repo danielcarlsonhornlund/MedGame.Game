@@ -54,8 +54,8 @@ namespace MedGame.UI.WPF
 
                 if (Game.Player.Email!= null)
                 {
-                    GameWindow GameWindow = new GameWindow();
-                    GameWindow.Show();
+                    MunkWindow MunkWindow = new MunkWindow();
+                    MunkWindow.Show();
 
                     Game.Player.TotalDaysMissed = GameScoreCounter.CalculateMissedDates();
                     Game.Player.TotalHoursMissed = GameScoreCounter.CalculateMissedHours();
@@ -92,8 +92,8 @@ namespace MedGame.UI.WPF
             FacebookLoginWindow facebookLoginWindow = new FacebookLoginWindow();
             facebookLoginWindow.ShowDialog();
 
-            GameWindow GameWindow = new GameWindow();
-            GameWindow.Show();
+            MunkWindow MunkWindow = new MunkWindow();
+            MunkWindow.Show();
 
             this.Close();
 

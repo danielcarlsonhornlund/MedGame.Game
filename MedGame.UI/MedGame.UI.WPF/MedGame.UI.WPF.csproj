@@ -51,7 +51,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -59,6 +70,7 @@
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -83,9 +95,6 @@
     <Compile Include="FacebookLoginWindow.xaml.cs">
       <DependentUpon>FacebookLoginWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameWindow.xaml.cs">
-      <DependentUpon>GameWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="LoadingCircleWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,17 +104,13 @@
     <Compile Include="LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MunkWindow.xaml.cs">
+      <DependentUpon>MunkWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TamagotchiWindow.xaml.cs">
-      <DependentUpon>TamagotchiWindow.xaml</DependentUpon>
-    </Compile>
     <Page Include="FacebookLoginWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,7 +118,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="DataWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -121,15 +126,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="DataWindow.xaml.cs">
+      <DependentUpon>DataWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SignInWindow.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="MunkWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="TamagotchiWindow.xaml">
+    <Page Include="SignInWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,16 +198,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\Common\background.png" />
-    <Resource Include="images\Common\budda icon.png" />
+    <Resource Include="images\Common\buddaicon.png" />
     <Resource Include="images\Common\loadingcircle.png" />
-    <Resource Include="images\Common\play icon png.png" />
-    <Resource Include="images\Common\settings icon png.png" />
-    <Resource Include="images\Common\share icon2 png.png" />
-    <Resource Include="images\Common\statistik mörk icon png.png" />
-    <Resource Include="images\GameWindow\playButton.png" />
-    <Resource Include="images\MainPage\buddaBig.png" />
-    <Resource Include="images\MainPage\health meter.png" />
-    <Resource Include="images\MainPage\tankebubbla.png" />
+    <Resource Include="images\Common\playicon.png" />
+    <Resource Include="images\Common\settingsicon.png" />
+    <Resource Include="images\Common\shareicon.png" />
+    <Resource Include="images\Common\statisticsicon.png" />
+    <Resource Include="images\PlayWindow\playbutton.png" />
+    <Resource Include="images\MunkWindow\buddabig.png" />
+    <Resource Include="images\MunkWindow\healthmeter.png" />
+    <Resource Include="images\MunkWindow\thinkingbubble.png" />
     <Resource Include="images\old\Bakgrund.jpg" />
     <Resource Include="images\old\Main\buddha rensad.png" />
     <Resource Include="images\old\Main\health meter 2.png" />
@@ -236,15 +241,12 @@
     <Resource Include="images\old\SignIn\buttonLogin.jpg" />
     <Resource Include="images\old\SignIn\login or sign up.png" />
     <Resource Include="images\old\SignIn\stork och barn png.png" />
-    <Resource Include="images\SignIn\birdandbaby.png" />
-    <Resource Include="images\SignIn\buddhainyou.png" />
-    <Resource Include="images\SignIn\GiveBirthTitle.png" />
-    <Resource Include="images\SignIn\greenrectangle.png" />
-    <Resource Include="images\SignIn\Line 1.png" />
-    <Resource Include="images\SignIn\Sign up Button.png" />
-    <Resource Include="images\SignIn\SignInButton.png" />
-    <Resource Include="images\SignIn\your path vit.png" />
-    <Resource Include="images\SignIn\birdandbabycropped.png" />
+    <Resource Include="images\SignInWindow\birdandbaby.png" />
+    <Resource Include="images\SignInWindow\buddhainyou.png" />
+    <Resource Include="images\SignInWindow\givebirthtitle.png" />
+    <Resource Include="images\SignInWindow\greenrectangle.png" />
+    <Resource Include="images\SignInWindow\yourpathtobecomebuddah.png" />
+    <Resource Include="images\SignInWindow\birdandbabycropped.png" />
     <Content Include="media\Level1d1.mp3" />
     <Content Include="media\Level1d2.mp3" />
     <Content Include="media\Level1d3.mp3" />
@@ -254,8 +256,7 @@
     <Content Include="media\Level1d7.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\Common\processmatare.png" />
-    <Resource Include="images\SignIn\login or sign up.png" />
+    <Resource Include="images\Common\processmeter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

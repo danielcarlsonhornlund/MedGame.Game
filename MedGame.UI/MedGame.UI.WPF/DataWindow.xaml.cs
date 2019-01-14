@@ -30,14 +30,12 @@ namespace MedGame.UI.WPF
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
             FileHandler.LoadFromFile();
-            UpdateUI();
         }
 
         private async void ButtonLogout_Click(object sender, RoutedEventArgs e)
         {
             RESTClient RESTClient = new RESTClient();
             await RESTClient.Update(Game.Player);
-            UpdateUI();
         }
 
         private void ButtonPlay_Click(object sender, RoutedEventArgs e)
@@ -52,7 +50,6 @@ namespace MedGame.UI.WPF
             {
                 ButtonPlay.Content = "Play";
                 Game.StopMeditation();
-                UpdateUI();
             }
         }
 

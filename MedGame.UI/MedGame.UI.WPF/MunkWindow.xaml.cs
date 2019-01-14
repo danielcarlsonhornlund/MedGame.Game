@@ -15,13 +15,18 @@ using System.Windows.Shapes;
 namespace MedGame.UI.WPF
 {
     /// <summary>
-    /// Interaction logic for TamagotchiWindow.xaml
+    /// Interaction logic for MunkWindow.xaml
     /// </summary>
-    public partial class TamagotchiWindow : Window
+    public partial class MunkWindow : Window
     {
-        public TamagotchiWindow()
+        public MunkWindow()
         {
             InitializeComponent();
+        }
+
+        private void Image_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
