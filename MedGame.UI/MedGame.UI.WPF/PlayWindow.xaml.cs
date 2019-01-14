@@ -51,10 +51,10 @@ namespace MedGame.UI.WPF
                 MediaPlayer.Pause();
                 isPlaying = false;
                 Game.StopMeditation();
+                var player = await restClient.Update(Game.Player);
 
-                await restClient.Update(Game.Player);
+                MessageBox.Show(player.PlayerMessage);
             }
-
         }
 
         public string GetApplicationRoot()

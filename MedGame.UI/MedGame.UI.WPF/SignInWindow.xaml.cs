@@ -26,33 +26,32 @@ namespace MedGame.UI.WPF
             //}
             //else
             //{
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             //}
         }
 
         private async void ButtonSignIn_Click(object sender, RoutedEventArgs e)
         {
             LoadingCircleWindow.Show();
-            
-            HttpResponseMessage result = await RestClient.SignIn(TextBoxEmail.Text, TextBoxPassword.Password);
+
+            Player result = await RestClient.SignIn(TextBoxEmail.Text, TextBoxPassword.Password);
 
             CheckLogin(result);
         }
 
         private async void ButtonSignUp_Click(object sender, RoutedEventArgs e)
         {
-            HttpResponseMessage result = await RestClient.SignUp(TextBoxEmail.Text, TextBoxPassword.Password);
+            Player result = await RestClient.SignUp(TextBoxEmail.Text, TextBoxPassword.Password);
         }
 
-        private async void CheckLogin(HttpResponseMessage result)
+        private void CheckLogin(Player playerResult)
         {
-            if (result.IsSuccessStatusCode)
+            if (playerResult.Email != null)
             {
-                string playerAsJson = await result.Content.ReadAsStringAsync();
-                Game.Player = JsonConvert.DeserializeObject<Player>(playerAsJson);
+                Game.Player = playerResult;
 
-                if (Game.Player.Email!= null)
+                if (Game.Player.Email != null)
                 {
                     MunkWindow MunkWindow = new MunkWindow();
                     MunkWindow.Show();
@@ -67,36 +66,31 @@ namespace MedGame.UI.WPF
                 {
                     MessageBox.Show(Game.Player.PlayerMessage);
                 }
+
+                LoadingCircleWindow.Hide();
             }
-            else
+        }
+
+
+            private void Window_Loaded(object sender, RoutedEventArgs e)
             {
-                string playerAsJson = await result.Content.ReadAsStringAsync();
             }
 
-            LoadingCircleWindow.Hide();
-        }
+            private void LabelLoginWithFacebook_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+            {
 
+            }
 
+            private void LabelLoginWithFacebook_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+            {
+                FacebookLoginWindow facebookLoginWindow = new FacebookLoginWindow();
+                facebookLoginWindow.ShowDialog();
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-        }
+                MunkWindow MunkWindow = new MunkWindow();
+                MunkWindow.Show();
 
-        private void LabelLoginWithFacebook_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
-        {
+                this.Close();
 
-        }
-
-        private void LabelLoginWithFacebook_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            FacebookLoginWindow facebookLoginWindow = new FacebookLoginWindow();
-            facebookLoginWindow.ShowDialog();
-
-            MunkWindow MunkWindow = new MunkWindow();
-            MunkWindow.Show();
-
-            this.Close();
-
+            }
         }
     }
-}

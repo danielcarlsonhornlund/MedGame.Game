@@ -16,7 +16,7 @@ namespace MedGame.Services
         public static string Url { get; set; } = "http://medgame.azurewebsites.net/api/player";
         public static string UrlFacebook { get; set; } = "http://medgame.azurewebsites.net/api/facebook/signin";
 
-        //public string Url { get; set; } = "https://localhost:44350/api/player";
+       // public string Url { get; set; } = "https://localhost:44350/api/player";
 
         public bool CheckForInternetConnection()
         {
@@ -30,26 +30,33 @@ namespace MedGame.Services
             }
         }
 
-        public async Task<HttpResponseMessage> SignIn(string email, string password)
+        public async Task<Player> SignIn(string email, string password)
         {
             string fullUrl = Url + $"/signin/{email}/{password}";
             HttpResponseMessage httpResponseMessage = await client.GetAsync(fullUrl);
-            return httpResponseMessage;
+
+            string result = await httpResponseMessage.Content.ReadAsStringAsync();
+            Player playerResult = JsonConvert.DeserializeObject<Player>(result);
+
+            return playerResult;
         }
 
-        public async Task<HttpResponseMessage> SignUp(string email, string password)
+        public async Task<Player> SignUp(string email, string password)
         {
             string fullUrl = Url + $"/signup/{email}/{password}";
             HttpResponseMessage httpResponseMessage = await client.GetAsync(fullUrl);
-            return httpResponseMessage;
+
+            string result = await httpResponseMessage.Content.ReadAsStringAsync();
+            Player playerResult = JsonConvert.DeserializeObject<Player>(result);
+
+            return playerResult;
         }
 
 
-        public async Task<HttpResponseMessage> Update(Player player)
+        public async Task<Player> Update(Player player)
         {
+            string fullUrl = Url;
 
-            string fullUrl = Url + "/update";
-            
             var httpClient = new HttpClient();
             string playerAsJson = JsonConvert.SerializeObject(player);
 
@@ -58,7 +65,19 @@ namespace MedGame.Services
 
             string result = await httpResponseMessage.Content.ReadAsStringAsync();
 
-            return httpResponseMessage;
+            Player playerResult = null;
+
+            try
+            {
+                playerResult = JsonConvert.DeserializeObject<Player>(result);
+            }
+            catch (Exception ex)
+            {
+                playerResult.PlayerMessage = "Could not update player: "+Environment.NewLine + ex.Message + Environment.NewLine+ result;
+            }
+             
+
+            return playerResult;
         }
     }
 }
