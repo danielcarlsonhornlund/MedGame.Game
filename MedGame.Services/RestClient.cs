@@ -13,10 +13,10 @@ namespace MedGame.Services
     {
         private HttpClient client = new HttpClient();
 
-        //public static string Url { get; set; } = "http://medgame.azurewebsites.net/api/player";
+        public static string Url { get; set; } = "http://medgame.azurewebsites.net/api/player";
         public static string UrlFacebook { get; set; } = "http://medgame.azurewebsites.net/api/facebook/signin";
 
-        public string Url { get; set; } = "https://localhost:44350/api/player";
+        //public string Url { get; set; } = "https://localhost:44350/api/player";
 
         public bool CheckForInternetConnection()
         {

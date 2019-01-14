@@ -19,16 +19,16 @@
         <Image VerticalAlignment="Center" HorizontalAlignment="Stretch"  Source="Images/signin/greenrectangle.png" Margin="50,10,50,50" />
         <Grid Margin="0,-220,0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="56"/>
+                <ColumnDefinition Width="70"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="70"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="20"/>
-                <RowDefinition Height="20"/>
+                <RowDefinition Height="10"/>
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
@@ -37,8 +37,8 @@
             <PasswordBox x:Name="TextBoxPassword" Grid.Row="4"  Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0"/>
 
             <Grid Grid.Row="6" Grid.Column="1" Margin="0,0,0,20">
-                <Button x:Name="ButtonSignIn" Content="Sign in" HorizontalAlignment="Left" TabIndex="2" Click="ButtonSignIn_Click" Width="95" Height="25" BorderThickness="0" Background="LightGreen" Foreground="DarkGreen"/>
-                <Button x:Name="ButtonSignUp" Content="Sign up" HorizontalAlignment="Right" TabIndex="3" Click="ButtonSignUp_Click" Width="95"  Height="25" BorderThickness="0" Background="LightGreen" Foreground="DarkGreen"/>
+                <Button x:Name="ButtonSignIn" Content="Sign in" HorizontalAlignment="Left" TabIndex="2" Click="ButtonSignIn_Click" Width="85" Height="25" BorderThickness="0" Background="LightGreen" Foreground="DarkGreen"/>
+                <Button x:Name="ButtonSignUp" Content="Sign up" HorizontalAlignment="Right" TabIndex="3" Click="ButtonSignUp_Click" Width="85"  Height="25" BorderThickness="0" Background="LightGreen" Foreground="DarkGreen"/>
             </Grid>
         </Grid>
         <StackPanel/>

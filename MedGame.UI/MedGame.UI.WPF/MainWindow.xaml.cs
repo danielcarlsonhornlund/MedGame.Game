@@ -15,8 +15,6 @@ namespace MedGame.UI.WPF
         {
             InitializeComponent();
             SetLabel();
-            UpdateUI();
-
             timer.Interval= TimeSpan.FromSeconds(1);
 
             timer.Tick += Timer_Tick;
