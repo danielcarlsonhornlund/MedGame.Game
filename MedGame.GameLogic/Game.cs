@@ -10,19 +10,11 @@ namespace MedGame.GameLogic
 
         private static DispatcherTimer MeditationTimer { get; set; }
 
-        private static void CalculateMeditation(object sender, EventArgs e)
-        {
-            if (!CheckSameDate())
-            {
-                Game.Player.TotalMinutesMeditatedToday++;
-            }
-        }
-
         public static void StartMeditation()
         {
             MeditationTimer = new DispatcherTimer();
             MeditationTimer.Interval = TimeSpan.FromSeconds(1);
-            MeditationTimer.Tick += CalculateMeditation;
+            MeditationTimer.Tick += (object sender, EventArgs e) =>{ Game.Player.TotalMinutesMeditatedToday++; };
             MeditationTimer.Start();
         }
 
@@ -30,13 +22,19 @@ namespace MedGame.GameLogic
         {
             MeditationTimer.Stop();
 
-            if (!CheckSameDate())
+            if (CheckSameDate())
+            {
+                Game.Player.LastDateMeditated = DateTime.Now;
+                Game.Player.TotalMinutesMeditated += Game.Player.TotalMinutesMeditatedToday;
+            }
+            else
             {
                 Game.Player.LastDateMeditated = DateTime.Now;
                 Game.Player.TotalMinutesMeditated += Game.Player.TotalMinutesMeditatedToday;
                 Game.Player.Points = Game.Player.Points + (Game.Player.TotalMinutesMeditatedToday * Game.Player.Multiplicator);
                 Game.Player.TotalMinutesMeditatedToday = 0;
             }
+            
             Game.Player.TotalDaysMissed = 0;
         }
 

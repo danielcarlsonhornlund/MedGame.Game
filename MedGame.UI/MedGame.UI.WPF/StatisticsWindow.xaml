@@ -26,12 +26,12 @@
             </Grid.ColumnDefinitions>
 
             <Image x:Name="IconMunk" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/buddaicon.png"  />
-            <Image x:Name="IconPlay" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/playicon.png" PreviewMouseLeftButtonUp="IconPlay_PreviewMouseLeftButtonUp" />
+            <Image x:Name="IconPlay" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/playicon.png"  />
             <Image x:Name="IconStatistics" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/statisticsicon.png"  />
             <Image x:Name="IconShare" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/shareicon.png"  />
             <Image x:Name="IconSettings" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/settingsicon.png"  />
         </Grid>
-        <Image  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/common/statisticsicon.png" PreviewMouseLeftButtonUp="ButtonPlay_PreviewMouseLeftButtonUp"/>
+        <Image  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/common/statisticsicon.png" />
 
     </DockPanel>
 
