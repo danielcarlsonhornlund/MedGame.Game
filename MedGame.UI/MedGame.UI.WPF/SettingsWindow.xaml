@@ -31,7 +31,7 @@
             <Image x:Name="IconShare" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/shareicon.png" PreviewMouseLeftButtonUp="IconShare_PreviewMouseLeftButtonUp" />
             <Image x:Name="IconSettings" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/settingsicon.png" PreviewMouseLeftButtonUp="IconSettings_PreviewMouseLeftButtonUp" />
         </Grid>
-        <Image  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/common/settingsicon.png"/>
+        <Image  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/common/settingsicon.png" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp" />
 
     </DockPanel>
 

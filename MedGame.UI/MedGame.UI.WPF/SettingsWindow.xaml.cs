@@ -1,4 +1,5 @@
 ﻿using MedGame.GameLogic;
+using MedGame.Models;
 using MedGame.Services;
 using System;
 using System.Collections.Generic;
@@ -62,5 +63,13 @@ namespace MedGame.UI.WPF
             this.Close();
         }
 
+        private void Image_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            SignInWindow signInWindow = new SignInWindow();
+            signInWindow.Show();
+            Game.Player = new Player();
+
+            this.Close();
+        }
     }
 }
