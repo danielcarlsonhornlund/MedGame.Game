@@ -7,12 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="760.111" Width="525">
     <Grid>
-        <Button Content="Login" x:Name="ButtonLogin" HorizontalAlignment="Left" Margin="30,245,0,0" VerticalAlignment="Top" Width="75" Click="ButtonLogin_Click"/>
-        <Button Content="Logout" x:Name="ButtonLogout" HorizontalAlignment="Left" Margin="388,245,0,0" VerticalAlignment="Top" Width="75" Click="ButtonLogout_Click"/>
-        <Button Content="Play" x:Name="ButtonPlay" HorizontalAlignment="Left" Margin="218,245,0,0" VerticalAlignment="Top" Width="75" Click="ButtonPlay_Click"/>
-        <Label Content="TotalMinutesMeditatedToday" HorizontalAlignment="Left" Margin="30,299,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LabelPlayer" Content="Label" HorizontalAlignment="Left" Margin="226,360,0,0" VerticalAlignment="Top" Width="137" Height="296"/>
-        <Label x:Name="LabelPlayerInfo" Content="Player Info" HorizontalAlignment="Left" Height="296" Margin="30,360,0,0" VerticalAlignment="Top" Width="191"/>
+        <Label x:Name="LabelPlayer" Content="Label" HorizontalAlignment="Left" Margin="43,368,0,0" VerticalAlignment="Top" Width="330" Height="296"/>
 
     </Grid>
 </Window>
