@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedGame.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,66 +11,66 @@ namespace MedGame.GameLogic
     {
         public void CalculateSigninScore()
         {
-            Game.Player.TotalDaysMissed = CalculateMissedDates();
-            Game.Player.TotalHoursMissed = CalculateMissedHours();
-            Game.Player.Multiplicator = (int)CalculateMultiplicator();      //Check punishment int/double
-            Game.Player.Level = CheckLevel();
+            Game.Player.TotalDaysMissed = CalculateMissedDates(Game.Player.LastDateMeditated);
+            Game.Player.TotalHoursMissed = CalculateMissedHours(Game.Player.LastDateMeditated);
+            Game.Player.Multiplicator = (int)CalculateMultiplicator(Game.Player.TotalDaysMissed, Game.Player.Multiplicator);      //Check punishment int/double
+            Game.Player.Level = CheckLevel(Game.Player.Points);
         }
 
-        private int CalculateMissedDates()
+        public int CalculateMissedDates(DateTime LastDateMeditated)
         {
-            int totalDaysMissed = (DateTime.Now.Date - Game.Player.LastDateMeditated.Date).Days;
+            int totalDaysMissed = (DateTime.Now.Date - LastDateMeditated.Date).Days;
             if (totalDaysMissed <= 0) return 0;
 
             return totalDaysMissed;
         }
 
-        private int CalculateMissedHours()
+        public int CalculateMissedHours(DateTime LastDateMeditated)
         {
-            int totalHoursMissed = (int)(DateTime.Now - Game.Player.LastDateMeditated).TotalHours;
+            int totalHoursMissed = (int)(DateTime.Now - LastDateMeditated).TotalHours;
             if (totalHoursMissed <= 0) return 0;
 
             return totalHoursMissed;
         }
 
-        private double CalculateMultiplicator()
+        public double CalculateMultiplicator(int totalDaysMieesd, int multiplicator)
         {
             //Point punishment by reduced multiplicator
-            double multiplicator = 0;
+            double multiplicatorTemp = 0;
 
-            if (Game.Player.TotalDaysMissed == 1)
+            if (totalDaysMieesd == 1)
             {
-                multiplicator = (double)(Game.Player.Multiplicator * 0.080);
+                multiplicatorTemp = (double)(multiplicator * 0.080);
             }
-            else if (Game.Player.TotalDaysMissed == 2)
+            else if (totalDaysMieesd == 2)
             {
-                multiplicator = (double)(Game.Player.Multiplicator * 0.50);
+                multiplicatorTemp = (double)(multiplicator * 0.50);
             }
             else
             {
-                multiplicator = 1;
+                multiplicatorTemp = 1;
             }
 
-            if (multiplicator == 0)
+            if (multiplicatorTemp == 0)
             {
-                multiplicator = 1;
+                multiplicatorTemp = 1;
             }
 
-            return multiplicator;
+            return multiplicatorTemp;
         }
 
-        private string CheckLevel()
+        public string CheckLevel(int playerPoints)
         {
-            if (Game.Player.Points >= 0 && Game.Player.Points <= 10) { return "Baby"; }
-            else if (Game.Player.Points >= 11 && Game.Player.Points <= 20) { return "Child"; }
-            else if (Game.Player.Points >= 21 && Game.Player.Points <= 30) { return "Teenager"; }
-            else if (Game.Player.Points >= 31 && Game.Player.Points <= 40) { return "Pupil"; }
-            else if (Game.Player.Points >= 41 && Game.Player.Points <= 50) { return "YoungAdult"; }
-            else if (Game.Player.Points >= 51 && Game.Player.Points <= 60) { return "Adult"; }
-            else if (Game.Player.Points >= 61 && Game.Player.Points <= 70) { return "OldAdult"; }
-            else if (Game.Player.Points >= 71 && Game.Player.Points <= 80) { return "Old"; }
-            else if (Game.Player.Points >= 81 && Game.Player.Points <= 90) { return "Master"; }
-            else if (Game.Player.Points >= 91 && Game.Player.Points <= 100) { return "Munk"; }
+            if (playerPoints >= 0 && playerPoints <= 10) { return "Baby"; }
+            else if (playerPoints >= 11 && playerPoints <= 20) { return "Child"; }
+            else if (playerPoints >= 21 && playerPoints <= 30) { return "Teenager"; }
+            else if (playerPoints >= 31 && playerPoints <= 40) { return "Pupil"; }
+            else if (playerPoints >= 41 && playerPoints <= 50) { return "YoungAdult"; }
+            else if (playerPoints >= 51 && playerPoints <= 60) { return "Adult"; }
+            else if (playerPoints >= 61 && playerPoints <= 70) { return "OldAdult"; }
+            else if (playerPoints >= 71 && playerPoints <= 80) { return "Old"; }
+            else if (playerPoints >= 81 && playerPoints <= 90) { return "Master"; }
+            else if (playerPoints >= 91 && playerPoints <= 100) { return "Munk"; }
             else return "God";
         }
     }

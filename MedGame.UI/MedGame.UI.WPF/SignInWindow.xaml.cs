@@ -57,10 +57,14 @@ namespace MedGame.UI.WPF
                     MunkWindow MunkWindow = new MunkWindow();
                     MunkWindow.Show();
 
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+
                     GameScoreCounter gameScoreCounter = new GameScoreCounter();
                     gameScoreCounter.CalculateSigninScore();
 
                     LoadingWindow.Close();
+
                     this.Close();
                 }
                 else
