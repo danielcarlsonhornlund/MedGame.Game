@@ -34,7 +34,7 @@ namespace MedGame.Tests
 
             int totalDaysMissed = gameScoreCounter.CalculateMissedDates(new DateTime(2019, 01, 15));
 
-            double multiplicator = gameScoreCounter.CalculateMultiplicator(totalDaysMissed, 20);
+            double multiplicator = gameScoreCounter.CalculateMultiplicator(totalDaysMissed, 365);
             Assert.AreEqual(10, multiplicator);
         }
 

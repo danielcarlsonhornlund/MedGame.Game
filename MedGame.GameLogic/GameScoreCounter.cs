@@ -40,7 +40,7 @@ namespace MedGame.GameLogic
 
             if (totalDaysMieesd == 1)
             {
-                multiplicatorTemp = (double)(multiplicator * 0.080);
+                multiplicatorTemp = (double)(multiplicator * 0.80);
             }
             else if (totalDaysMieesd == 2)
             {
