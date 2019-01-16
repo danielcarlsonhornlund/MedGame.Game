@@ -32,7 +32,14 @@
         </Grid>
         <StackPanel>
             <Image  Source="Images/common/processmeter.png" Height="60" Margin="0,20"/>
-            <Image  Source="Images/MunkWindow/buddaBig.png" Height="280"  />
+
+            <Grid>
+                <Image Source="Images/MunkWindow/buddaBig.png" Width="200" />
+                <Image Source="Images/MunkWindow/thinkingbubble.png"  Width="120" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            </Grid>
+
+
+
             <Image  Source="Images/MunkWindow/healthmeter.png" Height="130" HorizontalAlignment="Center" />
         </StackPanel>
     </DockPanel>

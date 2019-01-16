@@ -36,6 +36,7 @@ namespace MedGame.GameLogic
             }
             
             Game.Player.TotalDaysMissed = 0;
+            Game.Player.TotalHoursMissed = 0;
         }
 
 

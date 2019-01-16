@@ -35,10 +35,27 @@ namespace MedGame.GameLogic
         private double CalculateMultiplicator()
         {
             //Point punishment by reduced multiplicator
+            double multiplicator = 0;
 
-            if (Game.Player.TotalDaysMissed == 1) return (double)(Game.Player.Multiplicator * 0.080);
-            else if (Game.Player.TotalDaysMissed == 2) return (double)(Game.Player.Multiplicator * 0.50);
-            else return 1;
+            if (Game.Player.TotalDaysMissed == 1)
+            {
+                multiplicator = (double)(Game.Player.Multiplicator * 0.080);
+            }
+            else if (Game.Player.TotalDaysMissed == 2)
+            {
+                multiplicator = (double)(Game.Player.Multiplicator * 0.50);
+            }
+            else
+            {
+                multiplicator = 1;
+            }
+
+            if (multiplicator == 0)
+            {
+                multiplicator = 1;
+            }
+
+            return multiplicator;
         }
 
         private string CheckLevel()
