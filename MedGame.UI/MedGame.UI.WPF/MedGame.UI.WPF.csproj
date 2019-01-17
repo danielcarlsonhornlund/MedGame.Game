@@ -92,15 +92,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="FacebookLoginWindow.xaml.cs">
-      <DependentUpon>FacebookLoginWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LoadingCircleWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoadingCircleWindow.Designer.cs">
-      <DependentUpon>LoadingCircleWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="PlayWindow.xaml.cs">
       <DependentUpon>PlayWindow.xaml</DependentUpon>
     </Compile>
@@ -113,10 +104,6 @@
     <Compile Include="SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="FacebookLoginWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PlayWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -160,9 +147,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="LoadingCircleWindow.resx">
-      <DependentUpon>LoadingCircleWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

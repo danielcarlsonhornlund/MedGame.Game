@@ -6,36 +6,37 @@ using System.Threading.Tasks;
 
 namespace MedGame.GameLogic
 {
-    public static class GameScoreCounter
+    public class GameScoreCounter
     {
-        public static int CalculateMissedDates()
+        public void CalculateSigninScore()
         {
-            int totalDaysMissed = (DateTime.Now - Game.Player.LastDateMeditated).Days;
+            Game.Player.TotalDaysMissed = CalculateMissedDates();
+            Game.Player.TotalHoursMissed = CalculateMissedHours();
+            CalculateMultiplicator();
+            CheckLevel();
+        }
+
+        private int CalculateMissedDates()
+        {
+            int totalDaysMissed = (DateTime.Now.Date - Game.Player.LastDateMeditated.Date).Days;
             return totalDaysMissed;
         }
 
-        public static int CalculateMissedHours()
+        private int CalculateMissedHours()
         {
             int totalHoursMissed = (int)(DateTime.Now - Game.Player.LastDateMeditated).TotalHours;
             return totalHoursMissed;
         }
 
-        private static void CalculateMeditation(object sender, EventArgs e)
-        {
-            Game.Player.TotalMinutesMeditatedToday++;
-            Game.Player.Points = Game.Player.TotalMinutesMeditatedToday * Game.Player.Multiplicator;
-        }
-
-
-        public static void CalculateMultiplicator()
+        private void CalculateMultiplicator()
         {
             //Point punishment by reduced multiplicator
-            
+
             if (Game.Player.TotalDaysMissed == 1) Game.Player.Multiplicator = (int)(Game.Player.Multiplicator * 0.080);
             else if (Game.Player.TotalDaysMissed == 2) Game.Player.Multiplicator = (int)(Game.Player.Multiplicator * 0.50);
             else if (Game.Player.TotalDaysMissed >= 3) Game.Player.Multiplicator = 1;
 
-            else Game.Player.Multiplicator = Game.Player.Multiplicator + 1;
+            else Game.Player.Multiplicator++;
 
             if (Game.Player.Multiplicator <= 0)
             {
@@ -43,7 +44,13 @@ namespace MedGame.GameLogic
             }
         }
 
-        public static void CheckLevel()
+        private void CalculateMeditation(object sender, EventArgs e)
+        {
+            Game.Player.TotalMinutesMeditatedToday++;
+            Game.Player.Points = Game.Player.TotalMinutesMeditatedToday * Game.Player.Multiplicator;
+        }
+        
+        private void CheckLevel()
         {
             if (Game.Player.Points >= 0 && Game.Player.Points <= 10) { Game.Player.Level = "Baby"; }
             else if (Game.Player.Points >= 11 && Game.Player.Points <= 20) { Game.Player.Level = "Child"; }

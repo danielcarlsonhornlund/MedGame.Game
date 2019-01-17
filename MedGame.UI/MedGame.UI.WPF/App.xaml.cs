@@ -13,12 +13,10 @@ namespace MedGame.UI.WPF
     /// </summary>
     public partial class App : Application
     {
-        LoadingCircleWindow loadingCircle = new LoadingCircleWindow();
-
 
         public App()
         {
-            LoadingCircleWindow.timer.Start();
+
         }
     }
 }

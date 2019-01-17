@@ -16,8 +16,6 @@ namespace MedGame.GameLogic
             {
                 Game.Player.TotalMinutesMeditatedToday++;
             }
-            
-            GameScoreCounter.CheckLevel();
         }
 
         public static void StartMeditation()

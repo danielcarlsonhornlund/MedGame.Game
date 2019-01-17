@@ -33,9 +33,7 @@ namespace MedGame.UI.WPF
         }
 
         private async void ButtonSignIn_Click(object sender, RoutedEventArgs e)
-        {
-            //LoadingCircleWindow.Show();
-            
+        {            
             LoadingWindow.Show();
 
             Player result = await RestClient.SignIn(TextBoxEmail.Text, TextBoxPassword.Password);
@@ -59,9 +57,8 @@ namespace MedGame.UI.WPF
                     MunkWindow MunkWindow = new MunkWindow();
                     MunkWindow.Show();
 
-                    Game.Player.TotalDaysMissed = GameScoreCounter.CalculateMissedDates();
-                    Game.Player.TotalHoursMissed = GameScoreCounter.CalculateMissedHours();
-                    GameScoreCounter.CalculateMultiplicator();
+                    GameScoreCounter gameScoreCounter = new GameScoreCounter();
+                    gameScoreCounter.CalculateSigninScore();
 
                     LoadingWindow.Close();
                     this.Close();
@@ -70,8 +67,6 @@ namespace MedGame.UI.WPF
                 {
                     MessageBox.Show(Game.Player.PlayerMessage);
                 }
-
-                LoadingCircleWindow.Hide();
             }
         }
 
@@ -82,18 +77,6 @@ namespace MedGame.UI.WPF
 
             private void LabelLoginWithFacebook_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
             {
-
-            }
-
-            private void LabelLoginWithFacebook_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
-            {
-                FacebookLoginWindow facebookLoginWindow = new FacebookLoginWindow();
-                facebookLoginWindow.ShowDialog();
-
-                MunkWindow MunkWindow = new MunkWindow();
-                MunkWindow.Show();
-
-                this.Close();
 
             }
         }
