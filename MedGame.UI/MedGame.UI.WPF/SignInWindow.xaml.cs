@@ -14,6 +14,7 @@ namespace MedGame.UI.WPF
     public partial class SignInWindow : Window
     {
         RESTClient RestClient = new RESTClient();
+        LoadingWindow LoadingWindow = new LoadingWindow();
 
         public SignInWindow()
         {
@@ -33,7 +34,9 @@ namespace MedGame.UI.WPF
 
         private async void ButtonSignIn_Click(object sender, RoutedEventArgs e)
         {
-            LoadingCircleWindow.Show();
+            //LoadingCircleWindow.Show();
+            
+            LoadingWindow.Show();
 
             Player result = await RestClient.SignIn(TextBoxEmail.Text, TextBoxPassword.Password);
 
@@ -60,6 +63,7 @@ namespace MedGame.UI.WPF
                     Game.Player.TotalHoursMissed = GameScoreCounter.CalculateMissedHours();
                     GameScoreCounter.CalculateMultiplicator();
 
+                    LoadingWindow.Close();
                     this.Close();
                 }
                 else

@@ -22,7 +22,7 @@ namespace MedGame.Services
         {
             try
             {
-                return new Ping().Send("https://localhost:44350/api/start").Status == IPStatus.Success;
+                return new Ping().Send(Url).Status == IPStatus.Success;
             }
             catch (Exception)
             {

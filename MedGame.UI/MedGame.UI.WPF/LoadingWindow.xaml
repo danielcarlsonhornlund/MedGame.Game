@@ -17,7 +17,7 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
-            <Image  Grid.Row="2"  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/common/loadingcircle.png" Margin="2,206,1,-356"  />
+            <Image x:Name="ButtonCircle" Grid.Row="2"  VerticalAlignment="Center" Height="169" HorizontalAlignment="Stretch"  Source="Images/common/loadingcircle.png" Margin="2,206,1,-325" MouseLeftButtonUp="ButtonCircle_MouseLeftButtonUp" />
         </Grid>
     </StackPanel>
 </Window>

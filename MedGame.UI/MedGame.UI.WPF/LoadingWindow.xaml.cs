@@ -23,5 +23,10 @@ namespace MedGame.UI.WPF
         {
             InitializeComponent();
         }
+
+        private void ButtonCircle_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
