@@ -172,21 +172,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\Bakgrund.jpg" />
-    <Resource Include="images\BakgrundMedKnappar.jpg" />
-    <Resource Include="images\Login\bakgLogin.jpg" />
-    <Resource Include="images\Login\bakgLogin420x668.jpg" />
-    <Resource Include="images\Login\buttonLogin.jpg" />
-    <Resource Include="images\Login\loading_circle.gif" />
-    <Resource Include="images\Login\SearchBarCircle.gif" />
-    <Resource Include="images\Main\bakgMunk.jpg" />
-    <Resource Include="images\Play\bakgPlay.jpg" />
-    <Resource Include="images\Sign Up\bakgSignUp.jpg" />
-    <Resource Include="images\Sign Up\bakgSignUp420x668.jpg" />
-    <Resource Include="images\Sign Up\buttonSignUp.png" />
-    <Resource Include="images\Sign Up\ButtonSignUpUp.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
@@ -198,15 +183,24 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\Play\PlayButton.jpg" />
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="images\Play\bakgPlayorg.jpg" />
-    <Resource Include="images\loadingcircle.gif" />
-    <Resource Include="images\loadingcircle2.gif" />
-    <Resource Include="images\loadingcircle3.gif" />
+    <Resource Include="images\Common\Image1.png" />
+    <Resource Include="images\Common\bakgrund.png" />
+    <Resource Include="images\Common\hjul som ska snurra loading.png" />
+    <Resource Include="images\Common\loadingcircle3.gif" />
+    <Resource Include="images\Common\settings icon png-2.png" />
+    <Resource Include="images\Common\share icon-1.png" />
+    <Resource Include="images\Common\statistik mörk icon png-2.png" />
+    <Resource Include="images\Common\your path vit.png" />
+    <Resource Include="images\Main\buddha rensad.png" />
+    <Resource Include="images\Main\health meter 2.png" />
+    <Resource Include="images\Main\tankebubbla.png" />
+    <Resource Include="images\Play\playknappen.png" />
+    <Resource Include="images\SignIn\buttonLogin.jpg" />
+    <Resource Include="images\SignIn\login or sign up.png" />
+    <Resource Include="images\SignIn\stork och barn png.png" />
+    <Resource Include="images\Common\processmatare.png" />
     <Content Include="media\Level1d1.mp3" />
     <Content Include="media\Level1d2.mp3" />
     <Content Include="media\Level1d3.mp3" />
@@ -214,6 +208,32 @@
     <Content Include="media\Level1d5.mp3" />
     <Content Include="media\Level1d6.mp3" />
     <Content Include="media\Level1d7.mp3" />
+    <Resource Include="images\Bakgrund.jpg" />
+    <Resource Include="images\new\bakgrund-7.png" />
+    <Resource Include="images\new\buddha in you text png.png" />
+    <Resource Include="images\new\buddha rensad.png" />
+    <Resource Include="images\new\give birth to png.png" />
+    <Resource Include="images\new\grön ruta png.png" />
+    <Resource Include="images\new\hjul som ska snurra loading.png" />
+    <Resource Include="images\new\Line 1.png" />
+    <Resource Include="images\new\login png.png" />
+    <Resource Include="images\new\play icon png-1.png" />
+    <Resource Include="images\new\play icon png-2.png" />
+    <Resource Include="images\new\play icon png.png" />
+    <Resource Include="images\new\playknappen.png" />
+    <Resource Include="images\new\processmatare.png" />
+    <Resource Include="images\new\settings icon png-1.png" />
+    <Resource Include="images\new\settings icon png.png" />
+    <Resource Include="images\new\share icon-2.png" />
+    <Resource Include="images\new\share icon2 png.png" />
+    <Resource Include="images\new\sign in png.png" />
+    <Resource Include="images\new\statistik mörk icon png-1.png" />
+    <Resource Include="images\new\statistik mörk icon png.png" />
+    <Resource Include="images\Play\PlayButton.jpg" />
+    <Resource Include="images\Sign Up\bakgSignUp.jpg" />
+    <Resource Include="images\Sign Up\bakgSignUp420x668.jpg" />
+    <Resource Include="images\Sign Up\buttonSignUp.png" />
+    <Resource Include="images\Sign Up\ButtonSignUpUp.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

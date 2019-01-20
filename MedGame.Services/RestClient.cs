@@ -12,9 +12,10 @@ namespace MedGame.Services
     {
         private HttpClient client = new HttpClient();
 
-        public static string Url { get; set; } = "http://medgame.azurewebsites.net/api/player";
+        //public static string Url { get; set; } = "http://medgame.azurewebsites.net/api/player";
         public static string UrlFacebook { get; set; } = "http://medgame.azurewebsites.net/api/facebook/signin";
 
+        public string Url { get; set; } = "https://localhost:44350/api/player";
 
         public async Task<HttpResponseMessage> SignIn(string email, string password)
         {
@@ -33,13 +34,16 @@ namespace MedGame.Services
 
         public async Task<HttpResponseMessage> Update(Player player)
         {
+
+            string fullUrl = Url + "/update";
+            
             var httpClient = new HttpClient();
             string playerAsJson = JsonConvert.SerializeObject(player);
 
             StringContent content = new StringContent(playerAsJson, Encoding.UTF8, "application/json");
-            HttpResponseMessage httpResponseMessage = await httpClient.PutAsync(Url, content);
+            HttpResponseMessage httpResponseMessage = await httpClient.PutAsync(fullUrl, content);
 
-            string result = await httpResponseMessage.Content.ReadAsStringAsync(); ;
+            string result = await httpResponseMessage.Content.ReadAsStringAsync();
 
             return httpResponseMessage;
         }

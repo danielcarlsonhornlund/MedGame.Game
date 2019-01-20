@@ -30,6 +30,7 @@ namespace MedGame.Models
         public DateTime LastDateMeditated { get; set; } = DateTime.Now;
         public int TotalDaysMeditatedInRow { get; set; } = 1;
         public int TotalDaysMissed { get; set; } = 0;
+        public int TotalHoursMissed { get; set; } = 0;
         public int Multiplicator { get; set; } = 1;
         public string FacebookAccessToken { get; set; } = "0";
         public string PlayerMessage { get; set; } = "0";

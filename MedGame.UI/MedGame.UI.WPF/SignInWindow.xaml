@@ -6,7 +6,7 @@
         mc:Ignorable="d"
          Title="SignInWindow" Height="668" Width="420" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Window.Background>
-        <ImageBrush ImageSource="Images/Login/bakgLogin420x668.jpg" Stretch="Fill" />
+        <ImageBrush ImageSource="Images/common/bakgrund.png" Stretch="Fill" />
     </Window.Background>
 
 

@@ -18,6 +18,10 @@ namespace MedGame.UI.WPF
         public SignInWindow()
         {
             InitializeComponent();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+
         }
 
         private async void ButtonSignIn_Click(object sender, RoutedEventArgs e)
@@ -43,16 +47,19 @@ namespace MedGame.UI.WPF
 
                 if (Game.Player.Email!= null)
                 {
-
                     GameWindow GameWindow = new GameWindow();
                     GameWindow.Show();
+
+                    Game.Player.TotalDaysMissed = GameScoreCounter.CalculateMissedDates();
+                    Game.Player.TotalHoursMissed = GameScoreCounter.CalculateMissedHours();
+                    GameScoreCounter.CalculateMultiplicator();
+
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show(Game.Player.PlayerMessage);
                 }
-
             }
             else
             {

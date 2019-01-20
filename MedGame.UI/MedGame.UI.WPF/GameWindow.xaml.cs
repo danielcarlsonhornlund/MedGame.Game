@@ -72,13 +72,7 @@ namespace MedGame.UI.WPF
 
         private void UpdateUI()
         {
-            double positionNow = MediaPlayer.Position.Seconds;
-            double totalLengthOfAudio = MediaPlayer.NaturalDuration.TimeSpan.TotalSeconds;
-            double processInProcentage = positionNow / totalLengthOfAudio;
-            ProgressBar.Value = processInProcentage * 1000;
-
-            LabelPoints.Content = Game.Player.Points;
-            LabelLevel.Content = Game.Player.Level;
+          
         }
 
 

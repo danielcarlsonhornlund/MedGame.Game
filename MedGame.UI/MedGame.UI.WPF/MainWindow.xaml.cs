@@ -1,20 +1,32 @@
 ﻿using MedGame.GameLogic;
 using MedGame.Models;
 using MedGame.Services;
+using System;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace MedGame.UI.WPF
 {
     public partial class MainWindow : Window
     {
+        DispatcherTimer timer = new DispatcherTimer();
+
         public MainWindow()
         {
             InitializeComponent();
             SetLabel();
             UpdateUI();
 
-            
+            timer.Interval= TimeSpan.FromSeconds(1);
 
+            timer.Tick += Timer_Tick;
+            timer.Start();
+
+        }
+
+        private void Timer_Tick(object sender, System.EventArgs e)
+        {
+            UpdateUI();
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
@@ -48,7 +60,9 @@ namespace MedGame.UI.WPF
 
         public void UpdateUI()
         {
-            LabelPlayer.Content =
+            try
+            {
+                LabelPlayer.Content =
                 Game.Player.TotalMinutesMeditatedToday.ToString() + "\n" +
                 Game.Player.Health.ToString() + "\n" +
                 Game.Player.Level.ToString() + "\n" +
@@ -62,25 +76,40 @@ namespace MedGame.UI.WPF
                 Game.Player.UserName.ToString() + "\n" +
                 Game.Player.Email.ToString();
 
+
+            }
+            catch (System.Exception)
+            {
+                
+            }
             
 
         }
 
         private void SetLabel()
         {
-            LabelPlayerInfo.Content =
-                "Total Minutes meditated today: \n" +
-                "Health: \n" +
-                "Level: \n" +
-                "Last Date Meditated: \n" +
-                "Multiplicator: \n" +
-                "Password: \n" +
-                "Points: \n" +
-                "Total Days Meditated In Row: \n" +
-                "Total Days Missed: \n" +
-                "Total Minutes meditated: \n" +
-                "Username: \n" +
-                "Email: ";
+
+            try
+            {
+                LabelPlayerInfo.Content =
+             "Total Minutes meditated today: \n" +
+             "Health: \n" +
+             "Level: \n" +
+             "Last Date Meditated: \n" +
+             "Multiplicator: \n" +
+             "Password: \n" +
+             "Points: \n" +
+             "Total Days Meditated In Row: \n" +
+             "Total Days Missed: \n" +
+             "Total Minutes meditated: \n" +
+             "Username: \n" +
+             "Email: ";
+            }
+            catch (System.Exception)
+            {
+                
+            }
+         
 
         }
 

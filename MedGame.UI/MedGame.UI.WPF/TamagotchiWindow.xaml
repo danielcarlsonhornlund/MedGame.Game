@@ -7,7 +7,7 @@
         mc:Ignorable="d"
          Title="SignInWindow" Height="668" Width="420" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Background>
-        <ImageBrush ImageSource="images/Main/bakgMunk.jpg" Stretch="Fill" />
+        <ImageBrush ImageSource="Images/common/bakgrund.png" Stretch="Fill" />
     </Window.Background>
 
     <StackPanel>
@@ -24,11 +24,11 @@
             </Grid.ColumnDefinitions>
 
 
-         
+
         </Grid>
 
 
-        <Grid>
+        <Grid Height="232">
             <Grid.RowDefinitions>
                 <RowDefinition Height="167.2"/>
                 <RowDefinition Height="28"/>
