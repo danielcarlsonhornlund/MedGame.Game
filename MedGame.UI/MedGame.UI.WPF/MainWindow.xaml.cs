@@ -76,7 +76,6 @@ namespace MedGame.UI.WPF
                 Game.Player.UserName.ToString() + "\n" +
                 Game.Player.Email.ToString();
 
-
             }
             catch (System.Exception)
             {

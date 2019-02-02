@@ -16,9 +16,7 @@ namespace MedGame.GameLogic
             {
                 Game.Player.TotalMinutesMeditatedToday++;
             }
-
-            Game.Player.Points = (Game.Player.TotalMinutesMeditatedToday * Game.Player.Multiplicator);
-
+            
             GameScoreCounter.CheckLevel();
         }
 
@@ -28,8 +26,6 @@ namespace MedGame.GameLogic
             MeditationTimer.Interval = TimeSpan.FromSeconds(1);
             MeditationTimer.Tick += CalculateMeditation;
             MeditationTimer.Start();
-
-
         }
 
         public static void StopMeditation()
@@ -40,7 +36,7 @@ namespace MedGame.GameLogic
             {
                 Game.Player.LastDateMeditated = DateTime.Now;
                 Game.Player.TotalMinutesMeditated += Game.Player.TotalMinutesMeditatedToday;
-                Game.Player.Multiplicator++;
+                Game.Player.Points = Game.Player.Points + (Game.Player.TotalMinutesMeditatedToday * Game.Player.Multiplicator);
                 Game.Player.TotalMinutesMeditatedToday = 0;
             }
             Game.Player.TotalDaysMissed = 0;

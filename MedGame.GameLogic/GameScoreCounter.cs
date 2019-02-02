@@ -35,7 +35,7 @@ namespace MedGame.GameLogic
             else if (Game.Player.TotalDaysMissed == 2) Game.Player.Multiplicator = (int)(Game.Player.Multiplicator * 0.50);
             else if (Game.Player.TotalDaysMissed >= 3) Game.Player.Multiplicator = 1;
 
-            else Game.Player.TotalDaysMissed = Game.Player.Multiplicator + 1;
+            else Game.Player.Multiplicator = Game.Player.Multiplicator + 1;
 
             if (Game.Player.Multiplicator <= 0)
             {
