@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
+    <Compile Include="MultiplicatorCounter.cs" />
+    <Compile Include="LevelCounter.cs" />
     <Compile Include="GameScoreCounter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

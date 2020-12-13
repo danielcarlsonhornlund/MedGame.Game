@@ -2,7 +2,7 @@
 {
     public enum Levels
     {
-        Baby,
+        Baby=1,
         Child,
         Teenager,
         Pupil,

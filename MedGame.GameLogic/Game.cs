@@ -8,47 +8,46 @@ namespace MedGame.GameLogic
     {
         public static Player Player = new Player();
 
-        private static DispatcherTimer MeditationTimer { get; set; }
+        public static DispatcherTimer MeditationTimer { get; set; } = new DispatcherTimer();
 
         public static void StartMeditation()
         {
             MeditationTimer = new DispatcherTimer();
             MeditationTimer.Interval = TimeSpan.FromSeconds(1);
-            MeditationTimer.Tick += (object sender, EventArgs e) => { Game.Player.TotalMinutesMeditatedToday++; };
+            MeditationTimer.Tick += (object sender, EventArgs e) => { Player.TotalMinutesMeditatedToday++; };
             MeditationTimer.Start();
         }
 
-        public static void StopMeditation()
+        public static void StopMeditation(Player player)
         {
             MeditationTimer.Stop();
 
-            if (CheckSameDate())
+            if (CheckSameDate(DateTime.Now.Date))
             {
-                Game.Player.LastDateMeditated = DateTime.Now;
-                Game.Player.TotalMinutesMeditated += Game.Player.TotalMinutesMeditatedToday;
+                Player.LastDateMeditated = DateTime.Now;
+                Player.TotalMinutesMeditated += player.TotalMinutesMeditatedToday;
             }
             else
             {
-                Game.Player.LastDateMeditated = DateTime.Now;
-                Game.Player.TotalMinutesMeditated += Game.Player.TotalMinutesMeditatedToday;
-                Game.Player.Points = Game.Player.Points + (Game.Player.TotalMinutesMeditatedToday * Game.Player.Multiplicator);
-                Game.Player.TotalMinutesMeditatedToday = 0;
+                Player.LastDateMeditated = DateTime.Now;
+                Player.TotalMinutesMeditated += Player.TotalMinutesMeditatedToday;
+                Player.Points = Player.Points + (Player.TotalMinutesMeditatedToday * Player.Multiplicator);
+                Player.TotalMinutesMeditatedToday = 0;
             }
 
-            Game.Player.TotalDaysMissed = 0;
-            Game.Player.TotalHoursMissed = 0;
+           Player.TotalDaysMissed = 0;
+           Player.TotalHoursMissed = 0;
         }
 
 
 
-        private static bool CheckSameDate()
+        public static bool CheckSameDate(DateTime todaysDate)
         {
-            if (Game.Player.LastDateMeditated.Date == DateTime.Now.Date)
+            if (Player.LastDateMeditated.Date == todaysDate)
             {
                 return true;
             }
             return false;
         }
-
     }
 }

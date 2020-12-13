@@ -3,6 +3,7 @@ using MedGame.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -50,7 +51,7 @@ namespace MedGame.UI.WPF
             {
                 MediaPlayer.Pause();
                 isPlaying = false;
-                Game.StopMeditation();
+                Game.StopMeditation(Game.Player);
                 //var player = await restClient.Update(Game.Player);
 
                 MessageBox.Show("Updated");
@@ -59,7 +60,7 @@ namespace MedGame.UI.WPF
 
         public string GetApplicationRoot()
         {
-            var exePath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            var exePath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
             Regex appPathMatcher = new Regex(@"(?<!fil)[A-Za-z]:\\+[\S\s]*?(?=\\+bin)");
             var appRoot = appPathMatcher.Match(exePath).Value;
             return appRoot;

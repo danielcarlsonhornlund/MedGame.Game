@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using MedGame.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace MedGame.Tests
+namespace MedGame.Tests.GameLogicProject
 {
  //   [TestClass]
     public class SignInTESTS
@@ -12,12 +12,8 @@ namespace MedGame.Tests
         public async Task SignInTEST()
         {
             RESTClient RESTClient = new RESTClient();
-
             Models.Player playerSignInResult = await RESTClient.SignIn("daniel", "daniel");
-
             Assert.AreNotEqual(null, playerSignInResult);
-
-
         }
 
         [TestMethod]

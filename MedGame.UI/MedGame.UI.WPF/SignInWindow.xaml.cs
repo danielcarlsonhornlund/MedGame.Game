@@ -3,6 +3,7 @@ using MedGame.Models;
 using MedGame.Services;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Windows;
 
@@ -34,22 +35,26 @@ namespace MedGame.UI.WPF
         {
             LoadingWindow.Show();
 
-
-
             //Player result = await RestClient.SignIn(TextBoxEmail.Text, TextBoxPassword.Password);
 
             Player player = new Player()
             {
                 Email = "info@danielcarlson.net",
-                Health = 0,
+                Health = 100,
                 Level = Levels.Baby,
-                Points = 100,
-                LastDateMeditated = DateTime.Now.AddDays(-1), Multiplicator = 1, UserName = "Daniel", 
-                TotalDaysMeditatedInRow = 1, 
-                TotalDaysMissed =1, TotalHoursMissed = 1, 
-                TotalMinutesMeditated=100, TotalMinutesMeditatedToday=0, ListDatesInRowString = "", 
-                ListDatesInRow = new System.Collections.Generic.List<DateTime>(),             
-        };
+                Points = 1,
+                LastDateMeditated = new DateTime(2020, 02, 02),
+                Multiplicator = 1,
+                UserName = "Daniel",
+                TotalDaysMeditatedInRow = 1,
+                TotalDaysMissed = 0,
+                TotalHoursMissed = 0,
+                TotalMinutesMeditated = 100,
+                TotalMinutesMeditatedToday = 1,
+                ListDatesInRowString = "",
+                ListDatesInRow = new List<DateTime>(),
+
+            };
 
             CheckLogin(player);
         }
@@ -74,7 +79,7 @@ namespace MedGame.UI.WPF
                     mainWindow.Show();
 
                     GameScoreCounter gameScoreCounter = new GameScoreCounter();
-                    gameScoreCounter.CalculateSigninScore();
+                    gameScoreCounter.CalculateSigninScore(Game.Player);
 
                     LoadingWindow.Close();
 
@@ -88,13 +93,13 @@ namespace MedGame.UI.WPF
         }
 
 
-            private void Window_Loaded(object sender, RoutedEventArgs e)
-            {
-            }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+        }
 
-            private void LabelLoginWithFacebook_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
-            {
+        private void LabelLoginWithFacebook_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
 
-            }
         }
     }
+}
