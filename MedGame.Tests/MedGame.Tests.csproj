@@ -66,12 +66,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameClassTests.cs" />
-    <Compile Include="LevelCounterClassTests.cs" />
-    <Compile Include="GameScoreCounterClassTests.cs" />
-    <Compile Include="MultiplicatorCounterClassTests.cs" />
+    <Compile Include="GameLogicProjectTests\GameClassTests.cs" />
+    <Compile Include="GameLogicProjectTests\LevelCounterClassTests.cs" />
+    <Compile Include="GameLogicProjectTests\GameScoreCounterClassTests.cs" />
+    <Compile Include="GameLogicProjectTests\MultiplicatorCounterClassTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RestClientTEST.cs" />
+    <Compile Include="ServicesProjectTests\RestClientTEST - Copy.cs" />
+    <Compile Include="ServicesProjectTests\RestClientTEST.cs" />
     <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -68,7 +68,7 @@ namespace MedGame.Services
 
         public static string GetFullFileNamePath(string fileName)
         {
-            var exePath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+            var exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
             Regex appPathMatcher = new Regex(@"(?<!fil)[A-Za-z]:\\+[\S\s]*?(?=\\+bin)");
             var appRoot = appPathMatcher.Match(exePath).Value;
             return appRoot + fileName;
