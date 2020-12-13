@@ -1,4 +1,5 @@
-﻿<Window x:Class="MedGame.UI.WPF.MunkWindow"
+﻿
+<Window x:Class="MedGame.UI.WPF.MunkWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,21 +9,43 @@
     <Window.Background>
         <ImageBrush ImageSource="Images/common/background.png" Stretch="Fill" />
     </Window.Background>
- 
-        <DockPanel>
+    <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <Grid DockPanel.Dock="Bottom">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"  />
-                </Grid.RowDefinitions>
+            <Image  Source="Images/common/processmeter.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+            <Image Source="Images/MunkWindow/thinkingbubble.png" Grid.ColumnSpan="2"  VerticalAlignment="Top" Grid.Row="1" Grid.Column="4"/>
+            <Image Source="Images/MunkWindow/buddaBig.png" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Width="200" Grid.ColumnSpan="3" />
+        </Grid>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+        <Grid>
+            <Image  Source="Images/MunkWindow/healthmeter.png" HorizontalAlignment="Center" Height="110" />
+        </Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"  />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
             <Image x:Name="IconMunk" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/buddaicon.png" PreviewMouseLeftButtonUp="IconMunk_PreviewMouseLeftButtonUp"  />
             <Image x:Name="IconPlay" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/playicon.png" PreviewMouseLeftButtonUp="IconPlay_PreviewMouseLeftButtonUp" />
@@ -30,18 +53,7 @@
             <Image x:Name="IconShare" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/shareicon.png" PreviewMouseLeftButtonUp="IconShare_PreviewMouseLeftButtonUp" />
             <Image x:Name="IconSettings" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/settingsicon.png" PreviewMouseLeftButtonUp="IconSettings_PreviewMouseLeftButtonUp" />
         </Grid>
-        <StackPanel>
-            <Image  Source="Images/common/processmeter.png" Height="60" Margin="0,20"/>
-
-            <Grid>
-                <Image Source="Images/MunkWindow/buddaBig.png" Width="200" />
-                <Image Source="Images/MunkWindow/thinkingbubble.png"  Width="120" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-            </Grid>
-
-
-
-            <Image  Source="Images/MunkWindow/healthmeter.png" Height="130" HorizontalAlignment="Center" />
-        </StackPanel>
-    </DockPanel>
+    </StackPanel>
 
 </Window>
+
