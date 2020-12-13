@@ -19,7 +19,7 @@ namespace MedGame.UI.WPF
             InitializeComponent();
 
             TextBoxFacebookFullName.Text = GamePlay.Player.FacebookFullName;
-            TextBoxFacebookEmail.Text = GamePlay.Player.FacebookEmail;
+            TextBoxFacebookEmail.Text = GamePlay.Player.Email;
             TextBoxFacebookGender.Text = GamePlay.Player.FacebookGender;
             TextBoxAddress.Text = GamePlay.Player.Address;
             TextBoxFacebookDateOfBirth.Text = GamePlay.Player.FacebookDateOfBirth;
@@ -67,7 +67,7 @@ namespace MedGame.UI.WPF
         private async void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
             GamePlay.Player.FacebookFullName = TextBoxFacebookFullName.Text;
-            GamePlay.Player.FacebookEmail = TextBoxFacebookEmail.Text;
+            GamePlay.Player.Email = TextBoxFacebookEmail.Text;
             GamePlay.Player.FacebookGender = TextBoxFacebookGender.Text;
             GamePlay.Player.Address = TextBoxAddress.Text;
             GamePlay.Player.FacebookDateOfBirth = TextBoxFacebookDateOfBirth.Text;

@@ -1,4 +1,5 @@
-﻿using MedGame.Models;
+﻿using MedGame.GameLogic;
+using MedGame.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace MedGame.Services
 
         public async static Task<Player> LoadPlayerFromFile(string userName)
         {
-            return await Task.Run(() =>
+            return await Task.Run(async () =>
               {
                   try
                   {
@@ -43,6 +44,7 @@ namespace MedGame.Services
                   }
                   catch (Exception ex)
                   {
+                      await SavePlayerToFile(GamePlay.Player, userName); // only under development
                       throw new Exception($"Could not load player {userName} + {ex}");
                   }
               });
