@@ -14,7 +14,7 @@ namespace MedGame.GameLogic
         {
             MeditationTimer = new DispatcherTimer();
             MeditationTimer.Interval = TimeSpan.FromSeconds(1);
-            MeditationTimer.Tick += (object sender, EventArgs e) =>{ Game.Player.TotalMinutesMeditatedToday++; };
+            MeditationTimer.Tick += (object sender, EventArgs e) => { Game.Player.TotalMinutesMeditatedToday++; };
             MeditationTimer.Start();
         }
 
@@ -34,7 +34,7 @@ namespace MedGame.GameLogic
                 Game.Player.Points = Game.Player.Points + (Game.Player.TotalMinutesMeditatedToday * Game.Player.Multiplicator);
                 Game.Player.TotalMinutesMeditatedToday = 0;
             }
-            
+
             Game.Player.TotalDaysMissed = 0;
             Game.Player.TotalHoursMissed = 0;
         }

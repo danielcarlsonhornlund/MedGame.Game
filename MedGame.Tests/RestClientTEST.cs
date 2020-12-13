@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MedGame.Tests
 {
-    [TestClass]
+ //   [TestClass]
     public class SignInTESTS
     {
         [TestMethod]

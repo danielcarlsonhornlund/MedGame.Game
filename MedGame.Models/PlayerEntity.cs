@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MedGame.Models
 {
-    public class Player
+    public class PlayerEntity : IdentityUser
     {
         public string FacebookId { get; set; } = "0";
         public string FacebookFullName { get; set; } = "0";
@@ -19,9 +19,10 @@ namespace MedGame.Models
 
         [NotMapped]
         public List<DateTime> ListDatesInRow { get; set; } = new List<DateTime>();
+
         public string ListDatesInRowString { get; set; } = "0";
         public string Password { get; set; } = "0";
-        public Levels Level { get; set; } = Levels.Baby;
+        public string Level { get; set; } = "Child";
         public int Points { get; set; } = 0;
         public int TotalMinutesMeditated { get; set; } = 0;
         public int TotalMinutesMeditatedToday { get; set; } = 0;
@@ -34,9 +35,5 @@ namespace MedGame.Models
         public string FacebookAccessToken { get; set; } = "0";
         public string PlayerMessage { get; set; } = "0";
         public string HttpResult { get; set; } = "0";
-
-        public string Email { get; set; } = "0";
-
-        public string UserName { get; set; } = "0";
     }
 }

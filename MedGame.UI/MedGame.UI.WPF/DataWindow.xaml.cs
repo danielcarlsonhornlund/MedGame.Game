@@ -13,10 +13,11 @@ namespace MedGame.UI.WPF
 
         public MainWindow()
         {
-            InitializeComponent();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += (object sender, EventArgs e) => { UpdateUI(); };
             timer.Start();
+            InitializeComponent();
+
         }
 
         public void UpdateUI()

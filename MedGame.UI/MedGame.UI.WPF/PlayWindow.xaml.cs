@@ -51,9 +51,9 @@ namespace MedGame.UI.WPF
                 MediaPlayer.Pause();
                 isPlaying = false;
                 Game.StopMeditation();
-                var player = await restClient.Update(Game.Player);
+                //var player = await restClient.Update(Game.Player);
 
-                MessageBox.Show(player.PlayerMessage);
+                MessageBox.Show("Updated");
             }
         }
 
