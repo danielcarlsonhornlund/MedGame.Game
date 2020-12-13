@@ -44,7 +44,10 @@ namespace MedGame.UI.WPF
 
         private async void ButtonSignUp_Click(object sender, RoutedEventArgs e)
         {
-            Player result = await RestClient.SignUp(TextBoxEmail.Text, TextBoxPassword.Password);
+            //Player result = await RestClient.SignUp(TextBoxEmail.Text, TextBoxPassword.Password);
+            await FileHandler.SavePlayerToFile(new Player(), TextBoxEmail.Text);
+            GamePlay.Player = await FileHandler.LoadPlayerFromFile(TextBoxEmail.Text);
+            CheckLogin(GamePlay.Player);
         }
 
         private void CheckLogin(Player playerResult)

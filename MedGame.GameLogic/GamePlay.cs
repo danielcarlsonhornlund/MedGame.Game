@@ -26,6 +26,7 @@ namespace MedGame.GameLogic
             {
                 Player.LastDateMeditated = DateTime.Now;
                 Player.TotalMinutesMeditated += player.TotalMinutesMeditatedToday;
+                Player.Points = Player.Points + Player.TotalMinutesMeditatedToday;
             }
             else
             {

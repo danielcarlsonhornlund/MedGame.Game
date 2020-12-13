@@ -63,5 +63,12 @@ namespace MedGame.UI.WPF
             SettingsWindow.Show();
             this.Close();
         }
+
+        private void Image_PreviewMouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
+        {
+            PlayWindow playWindow = new PlayWindow();
+            playWindow.Show();
+            this.Close();
+        }
     }
 }

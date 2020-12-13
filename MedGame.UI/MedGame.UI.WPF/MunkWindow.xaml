@@ -27,7 +27,7 @@
 
             <Image  Source="Images/common/processmeter.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
             <Image Source="Images/MunkWindow/thinkingbubble.png" Grid.ColumnSpan="2"  VerticalAlignment="Top" Grid.Row="1" Grid.Column="4"/>
-            <Image Source="Images/MunkWindow/buddaBig.png" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Width="200" Grid.ColumnSpan="3" />
+            <Image Source="Images/MunkWindow/buddaBig.png" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Width="200" Grid.ColumnSpan="3" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp_1" />
         </Grid>
 
         <Grid>
