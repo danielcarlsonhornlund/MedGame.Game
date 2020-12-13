@@ -4,17 +4,63 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-         Title="SignInWindow" Height="568" Width="320" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+         Title="SignInWindow" Height="568" Width="320" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Window.Background>
         <ImageBrush ImageSource="Images/common/background.png" Stretch="Fill" />
     </Window.Background>
 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
 
-    <DockPanel>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition/>
 
-        <Grid DockPanel.Dock="Bottom">
+
+        </Grid.RowDefinitions>
+
+        <Image  Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="5"  Grid.Column="1" Stretch="Fill" Source="Images/signinwindow/greenrectangle.png" />
+
+        <Grid Margin="10" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="1">
+            
+            <StackPanel>
+                <Label Content="Settings" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
+
+                <Label Content="Name" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
+                <TextBox BorderThickness="0" x:Name="TextBoxFacebookFullName" Grid.Column="1" Grid.Row="2" TabIndex="0" Height="24" />
+
+                <Label Content="Email" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
+                <TextBox BorderThickness="0" x:Name="TextBoxFacebookEmail" Grid.Column="1" Grid.Row="2" TabIndex="0" Height="24" />
+
+                <Label Content="Gender" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
+                <TextBox BorderThickness="0" x:Name="TextBoxFacebookGender" Grid.Column="1" Grid.Row="2" TabIndex="0" Height="24" />
+
+                <Label Content="Address" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
+                <TextBox BorderThickness="0" x:Name="TextBoxAddress" Grid.Column="1" Grid.Row="2" TabIndex="0" Height="24" />
+
+                <Label Content="Date of birth" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
+                <TextBox BorderThickness="0" x:Name="TextBoxFacebookDateOfBirth" Grid.Column="1" Grid.Row="2" TabIndex="0" Height="24" />
+
+                <Label Content="Username" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
+                <TextBox BorderThickness="0" x:Name="TextBoxUsername" Grid.Column="1" Grid.Row="2" TabIndex="0" Height="24" />
+                <Button HorizontalAlignment="Right"  Margin="10" x:Name="ButtonSave" Content="Save" TabIndex="2" Click="ButtonSave_Click" FontSize="24" Width="85" Height="35" FontFamily="French Script MT" FontWeight="Bold" BorderThickness="0" Background="LightGreen" Foreground="DarkGreen"/>
+
+            </StackPanel>
+          
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="7">
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"  />
+                <RowDefinition Height="40"  />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -31,9 +77,41 @@
             <Image x:Name="IconShare" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/shareicon.png" PreviewMouseLeftButtonUp="IconShare_PreviewMouseLeftButtonUp" />
             <Image x:Name="IconSettings" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/settingsicon.png" PreviewMouseLeftButtonUp="IconSettings_PreviewMouseLeftButtonUp" />
         </Grid>
-        <Image  VerticalAlignment="Center" Height="200" HorizontalAlignment="Stretch"  Source="Images/common/settingsicon.png" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp" />
-
-    </DockPanel>
 
 
+
+
+        <!--<Grid Margin="356,2,-356,-2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="60"/>
+
+            </Grid.RowDefinitions>
+
+            <Image VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" Source="Images/signinwindow/greenrectangle.png" />
+            <Label Content="Sign in or signup" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
+            <TextBox x:Name="TextBoxEmail" TextAlignment="Center"  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0" Margin="25,0,0,0"/>
+            <PasswordBox x:Name="TextBoxPassword" Grid.Row="4"  Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0"/>
+
+            <Grid Grid.Row="6" Grid.Column="1" Margin="0,0,0,20">
+                <Button x:Name="ButtonSignIn" Content="Sign in" HorizontalAlignment="Left" TabIndex="2" Click="ButtonSignIn_Click" Width="85" Height="25" BorderThickness="0" Background="LightGreen" Foreground="DarkGreen"/>
+                <Button x:Name="ButtonSignUp" Content="Sign up" HorizontalAlignment="Right" TabIndex="3" Click="ButtonSignUp_Click" Width="85"  Height="25" BorderThickness="0" Background="LightGreen" Foreground="DarkGreen"/>
+
+
+            </Grid>
+
+        </Grid>-->
+
+        <StackPanel Margin="356,2,-356,-2"/>
+    </Grid>
 </Window>

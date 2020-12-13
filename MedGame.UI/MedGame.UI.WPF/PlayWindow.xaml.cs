@@ -1,20 +1,9 @@
 ﻿using MedGame.GameLogic;
 using MedGame.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MedGame.UI.WPF
 {
@@ -32,7 +21,7 @@ namespace MedGame.UI.WPF
             MediaPlayer = new MediaPlayer();
 
             string fileName = @"\media\level1d1.mp3";
-            string fullFilename = GetApplicationRoot() + fileName;
+            string fullFilename = FileHandler.GetFullFileNamePath(fileName);
             MediaPlayer.Open(new Uri(fullFilename));
         }
 
@@ -44,7 +33,7 @@ namespace MedGame.UI.WPF
             {
                 MediaPlayer.Play();
                 isPlaying = true;
-                
+
                 GamePlay.StartMeditation();
             }
             else
@@ -53,17 +42,7 @@ namespace MedGame.UI.WPF
                 isPlaying = false;
                 GamePlay.StopMeditation(GamePlay.Player);
                 await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.UserName);
-
-                MessageBox.Show("Updated");
             }
-        }
-
-        public string GetApplicationRoot()
-        {
-            var exePath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
-            Regex appPathMatcher = new Regex(@"(?<!fil)[A-Za-z]:\\+[\S\s]*?(?=\\+bin)");
-            var appRoot = appPathMatcher.Match(exePath).Value;
-            return appRoot;
         }
 
         private void IconPlay_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)

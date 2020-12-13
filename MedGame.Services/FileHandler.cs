@@ -1,14 +1,15 @@
-﻿using MedGame.GameLogic;
-using MedGame.Models;
+﻿using MedGame.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MedGame.Services
 {
-    public static class FileHandler
+    public class FileHandler
     {
         public static async Task SavePlayerToFile(Player player, string userName)
         {
@@ -61,6 +62,14 @@ namespace MedGame.Services
                     throw new Exception($"Could not remove player {userName} {ex}");
                 }
             });
+        }
+
+        public static string GetFullFileNamePath(string fileName)
+        {
+            var exePath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+            Regex appPathMatcher = new Regex(@"(?<!fil)[A-Za-z]:\\+[\S\s]*?(?=\\+bin)");
+            var appRoot = appPathMatcher.Match(exePath).Value;
+            return appRoot + fileName;
         }
     }
 }

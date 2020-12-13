@@ -1,33 +1,30 @@
 ﻿using MedGame.GameLogic;
 using MedGame.Models;
 using MedGame.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MedGame.UI.WPF
 {
     /// <summary>
-    /// Interaction logic for LoadingWindow.xaml
+    /// Interaction logic for SettingsWindow.xaml
     /// </summary>
     public partial class SettingsWindow : Window
     {
+        RESTClient RestClient = new RESTClient();
+        LoadingWindow LoadingWindow = new LoadingWindow();
+
         public SettingsWindow()
         {
             InitializeComponent();
-        }
 
+            TextBoxFacebookFullName.Text = GamePlay.Player.FacebookFullName;
+            TextBoxFacebookEmail.Text = GamePlay.Player.FacebookEmail;
+            TextBoxFacebookGender.Text = GamePlay.Player.FacebookGender;
+            TextBoxAddress.Text = GamePlay.Player.Address;
+            TextBoxFacebookDateOfBirth.Text = GamePlay.Player.FacebookDateOfBirth;
+            TextBoxUsername.Text = GamePlay.Player.UserName;
+        }
         private void IconPlay_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             PlayWindow playWindow = new PlayWindow();
@@ -63,12 +60,23 @@ namespace MedGame.UI.WPF
             this.Close();
         }
 
-        private void Image_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            SignInWindow signInWindow = new SignInWindow();
-            signInWindow.Show();
-            GamePlay.Player = new Player();
+        }
 
+        private async void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+            GamePlay.Player.FacebookFullName = TextBoxFacebookFullName.Text;
+            GamePlay.Player.FacebookEmail = TextBoxFacebookEmail.Text;
+            GamePlay.Player.FacebookGender = TextBoxFacebookGender.Text;
+            GamePlay.Player.Address = TextBoxAddress.Text;
+            GamePlay.Player.FacebookDateOfBirth = TextBoxFacebookDateOfBirth.Text;
+            GamePlay.Player.UserName = TextBoxUsername.Text;
+
+            await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.UserName);
+
+            MunkWindow munkWindow = new MunkWindow();
+            munkWindow.Show();
             this.Close();
         }
     }

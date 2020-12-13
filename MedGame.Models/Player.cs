@@ -15,8 +15,11 @@ namespace MedGame.Models
         public string FacebookFirstName { get; set; } = "0";
         public string FacebookEmail { get; set; } = "0";
 
+
         [NotMapped]
         public List<DateTime> ListDatesInRow { get; set; } = new List<DateTime>();
+
+        public string Address { get; set; } = "0";
         public string ListDatesInRowString { get; set; } = "0";
         public string Password { get; set; } = "0";
         public Levels Level { get; set; } = Levels.Baby;
