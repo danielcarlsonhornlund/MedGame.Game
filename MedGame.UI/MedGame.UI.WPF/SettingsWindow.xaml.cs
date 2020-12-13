@@ -67,7 +67,7 @@ namespace MedGame.UI.WPF
         {
             SignInWindow signInWindow = new SignInWindow();
             signInWindow.Show();
-            Game.Player = new Player();
+            GamePlay.Player = new Player();
 
             this.Close();
         }

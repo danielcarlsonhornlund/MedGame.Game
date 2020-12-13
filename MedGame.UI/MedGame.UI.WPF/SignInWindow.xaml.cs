@@ -37,26 +37,9 @@ namespace MedGame.UI.WPF
 
             //Player result = await RestClient.SignIn(TextBoxEmail.Text, TextBoxPassword.Password);
 
-            Player player = new Player()
-            {
-                Email = "info@danielcarlson.net",
-                Health = 100,
-                Level = Levels.Baby,
-                Points = 1,
-                LastDateMeditated = new DateTime(2020, 02, 02),
-                Multiplicator = 1,
-                UserName = "Daniel",
-                TotalDaysMeditatedInRow = 1,
-                TotalDaysMissed = 0,
-                TotalHoursMissed = 0,
-                TotalMinutesMeditated = 100,
-                TotalMinutesMeditatedToday = 1,
-                ListDatesInRowString = "",
-                ListDatesInRow = new List<DateTime>(),
+            GamePlay.Player = await FileHandler.LoadPlayerFromFile(TextBoxEmail.Text);
 
-            };
-
-            CheckLogin(player);
+            CheckLogin(GamePlay.Player);
         }
 
         private async void ButtonSignUp_Click(object sender, RoutedEventArgs e)
@@ -68,9 +51,9 @@ namespace MedGame.UI.WPF
         {
             if (playerResult.Email != null)
             {
-                Game.Player = playerResult;
+                GamePlay.Player = playerResult;
 
-                if (Game.Player.Email != null)
+                if (GamePlay.Player.Email != null)
                 {
                     MunkWindow MunkWindow = new MunkWindow();
                     MunkWindow.Show();
@@ -79,7 +62,7 @@ namespace MedGame.UI.WPF
                     mainWindow.Show();
 
                     GameScoreCounter gameScoreCounter = new GameScoreCounter();
-                    gameScoreCounter.CalculateSigninScore(Game.Player);
+                    gameScoreCounter.CalculateSigninScore(GamePlay.Player);
 
                     LoadingWindow.Close();
 
@@ -87,7 +70,7 @@ namespace MedGame.UI.WPF
                 }
                 else
                 {
-                    MessageBox.Show(Game.Player.PlayerMessage);
+                    MessageBox.Show(GamePlay.Player.PlayerMessage);
                 }
             }
         }

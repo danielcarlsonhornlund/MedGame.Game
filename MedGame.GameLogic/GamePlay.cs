@@ -4,7 +4,7 @@ using System.Windows.Threading;
 
 namespace MedGame.GameLogic
 {
-    public class Game
+    public class GamePlay
     {
         public static Player Player = new Player();
 

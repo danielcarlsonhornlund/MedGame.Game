@@ -4,24 +4,63 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace MedGame.Services
 {
     public static class FileHandler
     {
-        public static void SaveToFile()
+        public static async Task SavePlayerToFile(Player player, string userName)
         {
-            Game.Player.ListDatesInRowString = JsonConvert.SerializeObject(Game.Player.ListDatesInRow);
-            string json = JsonConvert.SerializeObject(Game.Player);
+            await Task.Run(() =>
+            {
+                try
+                {
+                    player.ListDatesInRowString = JsonConvert.SerializeObject(player.ListDatesInRow);
+                    string json = JsonConvert.SerializeObject(player);
 
-            File.WriteAllText("player.txt", json);
+                    File.WriteAllText(userName + ".txt", json);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Could not save player + {ex}");
+                }
+            });
         }
 
-        public static void LoadFromFile()
+        public async static Task<Player> LoadPlayerFromFile(string userName)
         {
-            string jsonPlayer = File.ReadAllText("player.txt");
-            Game.Player = JsonConvert.DeserializeObject<Player>(jsonPlayer);
-            Game.Player.ListDatesInRow = JsonConvert.DeserializeObject<List<DateTime>>(Game.Player.ListDatesInRowString);
+            return await Task.Run(() =>
+              {
+                  try
+                  {
+                      string jsonPlayer = File.ReadAllText(userName + ".txt");
+                      Player player = JsonConvert.DeserializeObject<Player>(jsonPlayer);
+                      player.ListDatesInRow = JsonConvert.DeserializeObject<List<DateTime>>(player.ListDatesInRowString);
+
+                      return player;
+                  }
+                  catch (Exception ex)
+                  {
+                      throw new Exception($"Could not load player {userName} + {ex}");
+                  }
+              });
+        }
+
+        public static async Task<bool> RemoveUser(string userName)
+        {
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    File.Delete(userName + ".txt");
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Could not remove player {userName} {ex}");
+                }
+            });
         }
     }
 }

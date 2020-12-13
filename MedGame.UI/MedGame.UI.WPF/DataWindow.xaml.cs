@@ -25,19 +25,19 @@ namespace MedGame.UI.WPF
             try
             {
                 LabelPlayer.Content =
-                "TotalMinutesMeditatedToday: " + Game.Player.TotalMinutesMeditatedToday.ToString() + "\n" +
-                "Health: " + Game.Player.Health.ToString() + "\n" +
-                "Level: " + Game.Player.Level.ToString() + "\n" +
-                "LastDateMeditated: " + Game.Player.LastDateMeditated.ToString() + "\n" +
-                "Multiplicator: " + Game.Player.Multiplicator.ToString() + "\n" +
-                "Password: " + Game.Player.Password.ToString() + "\n" +
-                "Points: " + Game.Player.Points.ToString() + "\n" +
-                "TotalDaysMeditatedInRow: " + Game.Player.TotalDaysMeditatedInRow.ToString() + "\n" +
-                "TotalDaysMissed: " + Game.Player.TotalDaysMissed.ToString() + "\n" +
-                "TotalMinutesMeditated: " + Game.Player.TotalMinutesMeditated.ToString() + "\n" +
-                "UserName: " + Game.Player.UserName.ToString() + "\n" +
-                "TotalHoursMissed: " + Game.Player.TotalHoursMissed + "\n" +
-                "Email: " + Game.Player.Email.ToString();
+                "TotalMinutesMeditatedToday: " + GamePlay.Player.TotalMinutesMeditatedToday.ToString() + "\n" +
+                "Health: " + GamePlay.Player.Health.ToString() + "\n" +
+                "Level: " + GamePlay.Player.Level.ToString() + "\n" +
+                "LastDateMeditated: " + GamePlay.Player.LastDateMeditated.ToString() + "\n" +
+                "Multiplicator: " + GamePlay.Player.Multiplicator.ToString() + "\n" +
+                "Password: " + GamePlay.Player.Password.ToString() + "\n" +
+                "Points: " + GamePlay.Player.Points.ToString() + "\n" +
+                "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString() + "\n" +
+                "TotalDaysMissed: " + GamePlay.Player.TotalDaysMissed.ToString() + "\n" +
+                "TotalMinutesMeditated: " + GamePlay.Player.TotalMinutesMeditated.ToString() + "\n" +
+                "UserName: " + GamePlay.Player.UserName.ToString() + "\n" +
+                "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed + "\n" +
+                "Email: " + GamePlay.Player.Email.ToString();
             }
             catch (System.Exception) { }
         }

@@ -12,23 +12,23 @@ namespace MedGame.GameLogicProject
         [TestMethod]
         public void StartMeditationShouldStartTimer()
         {
-            Game.StartMeditation();
-            Assert.IsTrue(Game.MeditationTimer.IsEnabled);
+            GamePlay.StartMeditation();
+            Assert.IsTrue(GamePlay.MeditationTimer.IsEnabled);
         }
 
         [TestMethod]
         public void StopMeditationShouldStopTimer()
         {
-            Game.StartMeditation();
-            Game.StopMeditation(player);
-            Assert.IsFalse(Game.MeditationTimer.IsEnabled);
+            GamePlay.StartMeditation();
+            GamePlay.StopMeditation(player);
+            Assert.IsFalse(GamePlay.MeditationTimer.IsEnabled);
         }
 
         [TestMethod]
         public void CheckSameDateShouldReturnTrue()
         {
             player.LastDateMeditated = DateTime.Now.Date;
-            var isSameDate = Game.CheckSameDate(DateTime.Now.Date);
+            var isSameDate = GamePlay.CheckSameDate(DateTime.Now.Date);
             Assert.IsTrue(isSameDate);
         }
 
@@ -36,7 +36,7 @@ namespace MedGame.GameLogicProject
         public void CheckSameDateShouldReturnFalse()
         {
             player.LastDateMeditated = DateTime.Now.Date.AddDays(1);
-            var isSameDate = Game.CheckSameDate(player.LastDateMeditated);
+            var isSameDate = GamePlay.CheckSameDate(player.LastDateMeditated);
             Assert.IsFalse(isSameDate);
         }
     }

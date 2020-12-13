@@ -45,14 +45,14 @@ namespace MedGame.UI.WPF
                 MediaPlayer.Play();
                 isPlaying = true;
                 
-                Game.StartMeditation();
+                GamePlay.StartMeditation();
             }
             else
             {
                 MediaPlayer.Pause();
                 isPlaying = false;
-                Game.StopMeditation(Game.Player);
-                //var player = await restClient.Update(Game.Player);
+                GamePlay.StopMeditation(GamePlay.Player);
+                await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.UserName);
 
                 MessageBox.Show("Updated");
             }
