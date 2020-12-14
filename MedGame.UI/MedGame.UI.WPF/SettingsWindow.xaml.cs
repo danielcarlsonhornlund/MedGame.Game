@@ -73,7 +73,7 @@ namespace MedGame.UI.WPF
             GamePlay.Player.FacebookDateOfBirth = TextBoxFacebookDateOfBirth.Text;
             GamePlay.Player.UserName = TextBoxUsername.Text;
 
-            await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.UserName);
+            await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.Email);
 
             MunkWindow munkWindow = new MunkWindow();
             munkWindow.Show();
