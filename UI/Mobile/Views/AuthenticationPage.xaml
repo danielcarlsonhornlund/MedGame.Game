@@ -2,24 +2,50 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:MedGame.ViewModels;assembly=Mobile"
-             x:Class="MedGame.Views.AuthenticationPage" BackgroundImageSource="Bound1.png">
+             x:Class="MedGame.Views.AuthenticationPage" BackgroundImageSource="background.png">
 
     <ContentPage.BindingContext>
         <viewModels:AuthenticationViewModel />
     </ContentPage.BindingContext>
-    
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="80" />
-        </Grid.RowDefinitions>
 
-        <ImageButton Source="{Binding ImageNFC}" 
-                     Command="{Binding AuthenticationCommand}" 
-                     HorizontalOptions="CenterAndExpand"  
-                     WidthRequest="100" 
-                     HeightRequest="100"  
-                     Grid.Row="1" 
-                     BackgroundColor="Transparent"/>
+    <Grid Margin="0,10,0,0">
+        <StackLayout>
+            <Image Source="givebirthtitle.png"/>
+            <Image  Source="birdandbabycropped.png" />
+            <Image  Source="buddhainyou.png" />
+            
+            <Grid>
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="1" Grid.RowSpan="26"  Grid.Column="1" Grid.ColumnSpan="4">
+                    <Image Grid.Row="0" Source="greenrectangle.png" Aspect="Fill" />
+
+                    <StackLayout>
+                        <Entry Placeholder="Username" HorizontalOptions="Fill" Margin="20,20,20,0"  FontSize="16"/>
+                        <Entry Placeholder="Password" HorizontalOptions="Fill" Margin="20,-8,20,0" FontSize="16"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Button Text="Sign in" FontSize="12" BackgroundColor="LightGreen" BorderColor="Green" BorderWidth="1" TextColor="DarkGreen"/>
+                            <Button Text="Sign up" FontSize="12" BackgroundColor="LightGreen" BorderColor="Green" BorderWidth="1" TextColor="DarkGreen"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </StackLayout>
+
     </Grid>
 </ContentPage>
