@@ -13,20 +13,20 @@ namespace MedGame.Views
 {
     [DesignTimeVisible(true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AuthenticationPage : ContentPage
+    public partial class SigninPage : ContentPage
     {
         private readonly IAuthenticationService _authenticationService;
         private readonly IIoTHubService _ioTHubService;
         private readonly IUserManagementService _userManagementService;
 
-        public AuthenticationPage(Autofac.IContainer container)
+        public SigninPage(Autofac.IContainer container)
         {
             InitializeComponent();
             _authenticationService = container.Resolve<IAuthenticationService>();
             _ioTHubService = container.Resolve<IIoTHubService>();
             _userManagementService = container.Resolve<IUserManagementService>();
 
-            BindingContext = new AuthenticationViewModel(_authenticationService, _ioTHubService, _userManagementService);
+            BindingContext = new SigninPageViewModel(_authenticationService, _ioTHubService, _userManagementService);
         }
         //protected async override void OnAppearing()
         //{

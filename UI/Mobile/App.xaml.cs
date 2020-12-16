@@ -31,7 +31,7 @@ namespace MedGame
             var container = builder.Build();
 
 
-            MainPage = new AuthenticationPage(container);
+            MainPage = new NotificationPage();
         }
 
 

@@ -28,13 +28,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\AuthenticationPage.xaml.cs">
-      <DependentUpon>AuthenticationPage.xaml</DependentUpon>
+    <Compile Update="NotificationPage.xaml.cs">
+      <DependentUpon>NotificationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\1SigninPage.xaml.cs">
+      <DependentUpon>1SigninPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\AuthenticationPage.xaml">
+    <EmbeddedResource Update="Views\1SigninPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

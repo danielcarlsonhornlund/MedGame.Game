@@ -4,12 +4,12 @@ using Xamarin.Forms;
 
 namespace LocalNotifications
 {
-    public partial class MainPage : ContentPage
+    public partial class NotificationPage : ContentPage
     {
         readonly INotificationManager notificationManager;
         int notificationNumber = 0;
 
-        public MainPage()
+        public NotificationPage()
         {
             InitializeComponent();
 

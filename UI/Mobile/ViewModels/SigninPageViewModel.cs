@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace MedGame.ViewModels
 {
-    public class AuthenticationViewModel : BaseViewModel
+    public class SigninPageViewModel : BaseViewModel
     {
         readonly IAuthenticationService _authenticationService;
 
@@ -28,10 +28,10 @@ namespace MedGame.ViewModels
             set => SetProperty(ref _isRefreshing, value);
         }
 
-        public AuthenticationViewModel()
+        public SigninPageViewModel()
         { }
 
-        public AuthenticationViewModel(IAuthenticationService authenticationService, IIoTHubService ioTHubService, IUserManagementService userManagementService)
+        public SigninPageViewModel(IAuthenticationService authenticationService, IIoTHubService ioTHubService, IUserManagementService userManagementService)
         {
             _authenticationService = authenticationService;
             _ioTHubService = ioTHubService;
