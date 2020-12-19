@@ -5,15 +5,15 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MedGame.UI", "MedGame.UI", "{70E420A3-1C5A-4AE0-85FE-BD3E5F5BB9F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.UI.WPF", "MedGame.UI\MedGame.UI.WPF\MedGame.UI.WPF.csproj", "{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.UI.WPF", "UI\MedGame.UI.WPF\MedGame.UI.WPF.csproj", "{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.Models", "MedGame.Models\MedGame.Models.csproj", "{A937ADFC-E8C8-4AB1-A112-F264AB907A4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.Models", "Models\MedGame.Models.csproj", "{A937ADFC-E8C8-4AB1-A112-F264AB907A4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.Services", "MedGame.Services\MedGame.Services.csproj", "{A1FC7FC3-2223-4B21-9A0F-E1C51F183758}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.Services", "Services\MedGame.Services.csproj", "{A1FC7FC3-2223-4B21-9A0F-E1C51F183758}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.Tests", "MedGame.Tests\MedGame.Tests.csproj", "{AD05DAFC-DD25-4656-886B-BE278BAD3A2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.Tests", "Tests\MedGame.Tests.csproj", "{AD05DAFC-DD25-4656-886B-BE278BAD3A2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.GameLogic", "MedGame.GameLogic\MedGame.GameLogic.csproj", "{DFF7B781-3792-4F70-B7E7-51EE7256B6FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.GameLogic", "GameLogic\MedGame.GameLogic.csproj", "{DFF7B781-3792-4F70-B7E7-51EE7256B6FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

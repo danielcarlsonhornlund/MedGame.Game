@@ -258,15 +258,15 @@
     <Resource Include="images\Common\processmeter.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MedGame.GameLogic\MedGame.GameLogic.csproj">
+    <ProjectReference Include="..\..\GameLogic\MedGame.GameLogic.csproj">
       <Project>{dff7b781-3792-4f70-b7e7-51ee7256b6fb}</Project>
       <Name>MedGame.GameLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\MedGame.Models\MedGame.Models.csproj">
+    <ProjectReference Include="..\..\Models\MedGame.Models.csproj">
       <Project>{a937adfc-e8c8-4ab1-a112-f264ab907a4e}</Project>
       <Name>MedGame.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\MedGame.Services\MedGame.Services.csproj">
+    <ProjectReference Include="..\..\Services\MedGame.Services.csproj">
       <Project>{a1fc7fc3-2223-4b21-9a0f-e1c51f183758}</Project>
       <Name>MedGame.Services</Name>
     </ProjectReference>
