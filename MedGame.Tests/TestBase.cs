@@ -1,9 +1,6 @@
 ﻿using MedGame.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MedGame.Tests
 {
@@ -17,7 +14,6 @@ namespace MedGame.Tests
             Points = 100,
             LastDateMeditated = DateTime.Now.AddDays(-1),
             Multiplicator = 1,
-            UserName = "Daniel",
             TotalDaysMeditatedInRow = 1,
             TotalDaysMissed = 0,
             TotalHoursMissed = 0,
