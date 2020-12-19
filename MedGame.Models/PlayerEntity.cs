@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MedGame.Models
 {
-    public class PlayerEntity : IdentityUser
+    public class PlayerEntity
     {
         public string FacebookId { get; set; } = "0";
         public string FacebookFullName { get; set; } = "0";

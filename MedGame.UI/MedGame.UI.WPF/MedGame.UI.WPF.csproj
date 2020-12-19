@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MedGame.UI.WPF</RootNamespace>
     <AssemblyName>MedGame.UI.WPF</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -29,6 +29,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -92,14 +93,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ShareWindow.xaml.cs">
-      <DependentUpon>ShareWindow.xaml</DependentUpon>
+    <Compile Include="4ShareWindow.xaml.cs">
+      <DependentUpon>4ShareWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SettingsWindow.xaml.cs">
-      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    <Compile Include="5SettingsWindow.xaml.cs">
+      <DependentUpon>5SettingsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StatisticsWindow.xaml.cs">
-      <DependentUpon>StatisticsWindow.xaml</DependentUpon>
+    <Compile Include="3StatisticsWindow.xaml.cs">
+      <DependentUpon>3StatisticsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="PlayWindow.xaml.cs">
       <DependentUpon>PlayWindow.xaml</DependentUpon>
@@ -107,21 +108,21 @@
     <Compile Include="LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MunkWindow.xaml.cs">
-      <DependentUpon>MunkWindow.xaml</DependentUpon>
+    <Compile Include="2MunkWindow.xaml.cs">
+      <DependentUpon>2MunkWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SignInWindow.xaml.cs">
-      <DependentUpon>SignInWindow.xaml</DependentUpon>
+    <Compile Include="1SignInWindow.xaml.cs">
+      <DependentUpon>1SignInWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="ShareWindow.xaml">
+    <Page Include="4ShareWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SettingsWindow.xaml">
+    <Page Include="5SettingsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="StatisticsWindow.xaml">
+    <Page Include="3StatisticsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -145,11 +146,11 @@
       <DependentUpon>DataWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MunkWindow.xaml">
+    <Page Include="2MunkWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SignInWindow.xaml">
+    <Page Include="1SignInWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,20 +182,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\MedGame.GameLogic\MedGame.GameLogic.csproj">
-      <Project>{17821F78-5FE6-4D0C-B86D-C14DDD39FAA5}</Project>
-      <Name>MedGame.GameLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MedGame.Models\MedGame.Models.csproj">
-      <Project>{F1418C5D-F6DD-4151-A9EC-5A27730AFA61}</Project>
-      <Name>MedGame.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MedGame.Services\MedGame.Services.csproj">
-      <Project>{70b55155-a99c-46ba-90ae-67185543df84}</Project>
-      <Name>MedGame.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -269,6 +256,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\Common\processmeter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MedGame.GameLogic\MedGame.GameLogic.csproj">
+      <Project>{dff7b781-3792-4f70-b7e7-51ee7256b6fb}</Project>
+      <Name>MedGame.GameLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MedGame.Models\MedGame.Models.csproj">
+      <Project>{a937adfc-e8c8-4ab1-a112-f264ab907a4e}</Project>
+      <Name>MedGame.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MedGame.Services\MedGame.Services.csproj">
+      <Project>{a1fc7fc3-2223-4b21-9a0f-e1c51f183758}</Project>
+      <Name>MedGame.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

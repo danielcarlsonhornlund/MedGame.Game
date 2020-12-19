@@ -37,7 +37,5 @@ namespace MedGame.Models
         public string HttpResult { get; set; } = "0";
 
         public string Email { get; set; } = "0";
-
-        public string UserName { get; set; } = "0";
     }
 }

@@ -12,7 +12,7 @@ namespace MedGame.Services
 {
     public class FileHandler
     {
-        public static async Task SavePlayerToFile(Player player, string userName)
+        public static async Task SavePlayerToFile(Player player, string email)
         {
             await Task.Run(() =>
             {
@@ -20,8 +20,7 @@ namespace MedGame.Services
                 {
                     player.ListDatesInRowString = JsonConvert.SerializeObject(player.ListDatesInRow);
                     string json = JsonConvert.SerializeObject(player);
-
-                    File.WriteAllText(userName + ".txt", json);
+                    File.WriteAllText(email, json);
                 }
                 catch (Exception ex)
                 {

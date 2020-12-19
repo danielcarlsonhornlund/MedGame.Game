@@ -35,7 +35,6 @@ namespace MedGame.UI.WPF
                 "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString() + "\n" +
                 "TotalDaysMissed: " + GamePlay.Player.TotalDaysMissed.ToString() + "\n" +
                 "TotalMinutesMeditated: " + GamePlay.Player.TotalMinutesMeditated.ToString() + "\n" +
-                "UserName: " + GamePlay.Player.UserName.ToString() + "\n" +
                 "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed + "\n" +
                 "Email: " + GamePlay.Player.Email.ToString();
             }

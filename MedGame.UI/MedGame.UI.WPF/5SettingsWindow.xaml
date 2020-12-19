@@ -38,7 +38,7 @@
                 <Label Content="Name" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
                 <TextBox BorderThickness="0" x:Name="TextBoxFacebookFullName" Grid.Column="1" Grid.Row="2" TabIndex="0" Height="24" />
 
-                <Label Content="Email" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
+                <Label Content="Email (Login email)" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
                 <TextBox BorderThickness="0" x:Name="TextBoxFacebookEmail" Grid.Column="1" Grid.Row="2" TabIndex="0" Height="24" />
 
                 <Label Content="Gender" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
@@ -49,9 +49,6 @@
 
                 <Label Content="Date of birth" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
                 <TextBox BorderThickness="0" x:Name="TextBoxFacebookDateOfBirth" Grid.Column="1" Grid.Row="2" TabIndex="0" Height="24" />
-
-                <Label Content="Username" HorizontalContentAlignment="Left"  FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
-                <TextBox BorderThickness="0" x:Name="TextBoxUsername" Grid.Column="1" Grid.Row="2" TabIndex="0" Height="24" />
                 <Button HorizontalAlignment="Right"  Margin="10" x:Name="ButtonSave" Content="Save" TabIndex="2" Click="ButtonSave_Click" FontSize="24" Width="85" Height="35" FontFamily="French Script MT" FontWeight="Bold" BorderThickness="0" Background="LightGreen" Foreground="DarkGreen"/>
 
             </StackPanel>

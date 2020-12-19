@@ -1,8 +1,7 @@
-﻿using System;
-using MedGame.GameLogic;
-using MedGame.Models;
+﻿using MedGame.GameLogic;
 using MedGame.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace MedGame.GameLogicProject
 {

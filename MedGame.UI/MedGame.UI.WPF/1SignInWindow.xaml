@@ -34,7 +34,7 @@
 
             </Grid.RowDefinitions>
             <Label Content="Sign in or signup" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" FontSize="24" Grid.Row="0" Grid.Column="1" FontFamily="French Script MT" FontWeight="Bold"/>
-            <TextBox x:Name="TextBoxEmail" TextAlignment="Center" Text="Daniel"  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0"/>
+            <TextBox x:Name="TextBoxEmail" TextAlignment="Center" Text="info@danielcarlson.net"  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0"/>
             <PasswordBox x:Name="TextBoxPassword" Grid.Row="4"  Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TabIndex="0"/>
 
             <Grid Grid.Row="6" Grid.Column="1" Margin="0,0,0,20">
