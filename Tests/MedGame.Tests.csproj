@@ -10,9 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MedGame.GameLogic\MedGame.GameLogic.csproj" />
-    <ProjectReference Include="..\MedGame.Models\MedGame.Models.csproj" />
-    <ProjectReference Include="..\MedGame.Services\MedGame.Services.csproj" />
+    <ProjectReference Include="..\GameLogic\MedGame.GameLogic.csproj" />
+    <ProjectReference Include="..\Models\MedGame.Models.csproj" />
+    <ProjectReference Include="..\Services\MedGame.Services.csproj" />
   </ItemGroup>
 
 </Project>

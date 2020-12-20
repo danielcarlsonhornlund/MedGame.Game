@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MedGame.Models\MedGame.Models.csproj" />
+    <ProjectReference Include="..\Models\MedGame.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>
