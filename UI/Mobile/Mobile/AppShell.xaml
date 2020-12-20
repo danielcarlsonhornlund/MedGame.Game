@@ -12,26 +12,43 @@
     -->
 
     <Shell.Resources>
-        <ResourceDictionary>
+        <!--<ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.BackgroundColor" Value= "Transparent"/>   --><!-- {StaticResource Primary}" />--><!--
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarBackgroundColor" Value="Transparent"/>
+                --><!--{StaticResource Primary}" />--><!--
+                
+                    <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
-        </ResourceDictionary>
+        </ResourceDictionary>-->
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellContent Title="About" Icon="buddaicon.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="Browse" Icon="playicon.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellContent Title="About" Icon="statisticsicon.png" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="Browse" Icon="playicon.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellContent Title="About" Icon="shareicon.png" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="Browse" Icon="settingsicon.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+
+
+
+        <!--<Image x:Name="IconMunk" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/buddaicon.png" PreviewMouseLeftButtonUp="IconMunk_PreviewMouseLeftButtonUp"  />
+        <Image x:Name="IconPlay" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/playicon.png" PreviewMouseLeftButtonUp="IconPlay_PreviewMouseLeftButtonUp" />
+        <Image x:Name="IconStatistics" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/statisticsicon.png" PreviewMouseLeftButtonUp="IconStatistics_PreviewMouseLeftButtonUp" />
+        <Image x:Name="IconShare" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/shareicon.png" PreviewMouseLeftButtonUp="IconShare_PreviewMouseLeftButtonUp" />
+        <Image x:Name="IconSettings" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/settingsicon.png" PreviewMouseLeftButtonUp="IconSettings_PreviewMouseLeftButtonUp" />
+        </Grid>-->
+
+
     </TabBar>
 
     <!--
