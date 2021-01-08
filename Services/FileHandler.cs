@@ -12,7 +12,7 @@ namespace MedGame.Services
 {
     public class FileHandler
     {
-        public static async Task SavePlayerToFile(player player, string fileName)
+        public static async Task SavePlayerToFile(Player player, string fileName)
         {
             await Task.Run(() =>
             {
@@ -29,14 +29,14 @@ namespace MedGame.Services
             });
         }
 
-        public async static Task<player> LoadPlayerFromFile(string fileName)
+        public async static Task<Player> LoadPlayerFromFile(string fileName)
         {
             return await Task.Run(() =>
               {
                   try
                   {
                       string jsonPlayer = File.ReadAllText(fileName);
-                      player player = JsonConvert.DeserializeObject<player>(jsonPlayer);
+                      Player player = JsonConvert.DeserializeObject<Player>(jsonPlayer);
                       player.ListDatesInRow = JsonConvert.DeserializeObject<List<DateTime>>(player.ListDatesInRowString);
 
                       return player;

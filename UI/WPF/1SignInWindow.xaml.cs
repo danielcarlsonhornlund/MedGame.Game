@@ -59,7 +59,7 @@ namespace MedGame.UI.WPF
             CheckLogin(GamePlay.Player);
         }
 
-        private void CheckLogin(player playerResult)
+        private void CheckLogin(Player playerResult)
         {
             if (playerResult.Email != null)
             {
@@ -87,9 +87,9 @@ namespace MedGame.UI.WPF
             }
         }
 
-        private player CreateNewPlayer()
+        private Player CreateNewPlayer()
         {
-            return new player()
+            return new Player()
             {
                 Address = string.Empty,
                 Email = TextBoxEmail.Text,

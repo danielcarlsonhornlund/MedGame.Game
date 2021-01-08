@@ -11,7 +11,7 @@ namespace MedGame.ServicesProjectTest
         [TestMethod]
         public async Task SavePlayerToFileShouldSavePlayer()
         {
-            player player = new player();
+            Player player = new Player();
 
             await FileHandler.SavePlayerToFile(player, "testuser");
             await FileHandler.RemoveUser("testUser");
@@ -21,7 +21,7 @@ namespace MedGame.ServicesProjectTest
         [TestMethod]
         public async Task LoadPlayerFromFileShouldReturnPlayer()
         {
-            player player = new player();
+            Player player = new Player();
 
             await FileHandler.SavePlayerToFile(player, "testuser");
             var loadedPlayer = await FileHandler.LoadPlayerFromFile("testuser");
@@ -34,7 +34,7 @@ namespace MedGame.ServicesProjectTest
         [TestMethod]
         public async Task RemoveUserShouldRemoveUser()
         {
-            player player = new player();
+            Player player = new Player();
 
             await FileHandler.SavePlayerToFile(player, "testuser");
             var removedPlayer = await FileHandler.RemoveUser("testuser");

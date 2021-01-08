@@ -5,7 +5,7 @@ namespace MedGame.GameLogic
 {
     public class GameScoreCounter
     {
-        public player CalculateSigninScore(player player)
+        public Player CalculateSigninScore(Player player)
         {
             player.TotalDaysMissed = CalculateMissedDates(player.LastDateMeditated.Date, DateTime.Now.Date);
             player.TotalHoursMissed = CalculateMissedHours(DateTime.Now, player.LastDateMeditated);
@@ -31,22 +31,25 @@ namespace MedGame.GameLogic
             return totalHoursMissed;
         }
 
-        public static player CalculateMeditationScore(player player, int totalMinutesMeditatedToday, double multiplicator)
+        public static Player CalculateMeditationScore(Player player, int totalMinutesMeditatedNow, double multiplicator)
         {
             player.LastDateMeditated = DateTime.Now;
-            player.TotalMinutesMeditated += totalMinutesMeditatedToday;
+            player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
+            player.TotalMinutesMeditated += totalMinutesMeditatedNow;
             player.Multiplicator++;
-            player.Points += (int)(totalMinutesMeditatedToday * multiplicator);
-            player.TotalMinutesMeditatedToday = 0;
+            player.Points += (int)(totalMinutesMeditatedNow * multiplicator);
+            player.TotalMinutesMeditatedNow = 0;
 
             return player;
         }
 
-        public static player CalculateMeditationScoreOnSameDay(player player, int TotalMinutesMeditatedToday)
+        public static Player CalculateMeditationScoreOnSameDay(Player player, int TotalMinutesMeditatedNow)
         {
             player.LastDateMeditated = DateTime.Now;
-            player.TotalMinutesMeditated += TotalMinutesMeditatedToday;
-            player.Points += TotalMinutesMeditatedToday;
+            player.TotalMinutesMeditatedToday += TotalMinutesMeditatedNow;
+            player.TotalMinutesMeditated += TotalMinutesMeditatedNow;
+            player.Points += TotalMinutesMeditatedNow;
+            player.TotalMinutesMeditatedNow = 0;
 
             return player;
         }

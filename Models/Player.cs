@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MedGame.Models
 {
-    public class player
+    public class Player
     {
         public string FacebookId { get; set; } = string.Empty;
         public string FacebookFullName { get; set; } = string.Empty;
@@ -34,5 +34,6 @@ namespace MedGame.Models
         public string PlayerMessage { get; set; } = string.Empty;
         public string HttpResult { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
+        public int TotalMinutesMeditatedNow { get; set; } = 0;
     }
 }

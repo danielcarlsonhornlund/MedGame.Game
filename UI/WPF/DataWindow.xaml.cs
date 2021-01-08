@@ -25,6 +25,7 @@ namespace MedGame.UI.WPF
             try
             {
                 LabelPlayer.Content =
+                "TotalMinutesMeditatedNow: " + GamePlay.Player.TotalMinutesMeditatedNow.ToString() + "\n" +
                 "TotalMinutesMeditatedToday: " + GamePlay.Player.TotalMinutesMeditatedToday.ToString() + "\n" +
                 "Health: " + GamePlay.Player.Health.ToString() + "\n" +
                 "Level: " + GamePlay.Player.Level.ToString() + "\n" +
