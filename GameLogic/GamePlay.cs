@@ -6,7 +6,7 @@ namespace MedGame.GameLogic
 {
     public class GamePlay
     {
-        public static Player Player = new Player();
+        public static player Player = new player();
 
         public static DispatcherTimer MeditationTimer { get; set; } = new DispatcherTimer();
 
@@ -18,22 +18,17 @@ namespace MedGame.GameLogic
             MeditationTimer.Start();
         }
 
-        public static void StopMeditation(Player player)
+        public static void StopMeditation()
         {
             MeditationTimer.Stop();
 
             if (CheckSameDate(DateTime.Now.Date))
             {
-                Player.LastDateMeditated = DateTime.Now;
-                Player.TotalMinutesMeditated += player.TotalMinutesMeditatedToday;
-                Player.Points = Player.Points + Player.TotalMinutesMeditatedToday;
+                GamePlay.Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(Player, Player.TotalMinutesMeditatedToday);
             }
             else
             {
-                Player.LastDateMeditated = DateTime.Now;
-                Player.TotalMinutesMeditated += Player.TotalMinutesMeditatedToday;
-                Player.Points = Player.Points + (Player.TotalMinutesMeditatedToday * Player.Multiplicator);
-                Player.TotalMinutesMeditatedToday = 0;
+                GamePlay.Player = GameScoreCounter.CalculateMeditationScore(Player, Player.TotalMinutesMeditatedToday, Player.Multiplicator);
             }
 
            Player.TotalDaysMissed = 0;
@@ -44,10 +39,13 @@ namespace MedGame.GameLogic
 
         public static bool CheckSameDate(DateTime todaysDate)
         {
+            return false;
+
             if (Player.LastDateMeditated.Date == todaysDate)
             {
                 return true;
             }
+
             return false;
         }
     }

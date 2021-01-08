@@ -1,6 +1,7 @@
 ﻿using MedGame.GameLogic;
 using MedGame.Services;
 using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -21,7 +22,7 @@ namespace MedGame.UI.WPF
             MediaPlayer = new MediaPlayer();
 
             string fileName = @"\media\level1d1.mp3";
-            string fullFilename = FileHandler.GetFullFileNamePath(fileName);
+            string fullFilename = Directory.GetCurrentDirectory() + fileName;
             MediaPlayer.Open(new Uri(fullFilename));
         }
 
@@ -40,8 +41,8 @@ namespace MedGame.UI.WPF
             {
                 MediaPlayer.Pause();
                 isPlaying = false;
-                GamePlay.StopMeditation(GamePlay.Player);
-                await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.Email);
+                GamePlay.StopMeditation();
+                await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.Email.MakeFullFileName());
             }
         }
 

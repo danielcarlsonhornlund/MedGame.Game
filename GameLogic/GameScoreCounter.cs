@@ -5,11 +5,11 @@ namespace MedGame.GameLogic
 {
     public class GameScoreCounter
     {
-        public Player CalculateSigninScore(Player player)
+        public player CalculateSigninScore(player player)
         {
             player.TotalDaysMissed = CalculateMissedDates(player.LastDateMeditated.Date, DateTime.Now.Date);
             player.TotalHoursMissed = CalculateMissedHours(DateTime.Now, player.LastDateMeditated);
-            player.Multiplicator = (int)MultiplicatorCounter.CalculateMultiplicator(player.TotalDaysMissed, player.Multiplicator);      //Check punishment int/double
+            player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalDaysMissed, player.Multiplicator);      //Check punishment int/double
             player.Level = LevelCounter.CheckLevel(player.Points);
 
             return player;
@@ -29,6 +29,25 @@ namespace MedGame.GameLogic
             if (totalHoursMissed <= 0) return 0;
 
             return totalHoursMissed;
+        }
+
+        public static player CalculateMeditationScore(player player, int totalMinutesMeditatedToday, double multiplicator)
+        {
+            player.LastDateMeditated = DateTime.Now;
+            player.TotalMinutesMeditated += totalMinutesMeditatedToday;
+            player.Points += (int)(totalMinutesMeditatedToday * multiplicator);
+            player.TotalMinutesMeditatedToday = 0;
+
+            return player;
+        }
+
+        public static player CalculateMeditationScoreOnSameDay(player player, int TotalMinutesMeditatedToday)
+        {
+            player.LastDateMeditated = DateTime.Now;
+            player.TotalMinutesMeditated += TotalMinutesMeditatedToday;
+            player.Points += TotalMinutesMeditatedToday;
+
+            return player;
         }
     }
 }

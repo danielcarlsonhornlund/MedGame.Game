@@ -6,7 +6,7 @@ namespace MedGame.Tests
 {
     public class TestBase
     {
-        public static Player player = new Player()
+        public static player player = new player()
         {
             Email = "info@danielcarlson.net",
             Health = 100,

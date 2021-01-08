@@ -12,7 +12,7 @@ namespace MedGame.Services
 {
     public class FileHandler
     {
-        public static async Task SavePlayerToFile(Player player, string email)
+        public static async Task SavePlayerToFile(player player, string fileName)
         {
             await Task.Run(() =>
             {
@@ -20,7 +20,7 @@ namespace MedGame.Services
                 {
                     player.ListDatesInRowString = JsonConvert.SerializeObject(player.ListDatesInRow);
                     string json = JsonConvert.SerializeObject(player);
-                    File.WriteAllText(email, json);
+                    File.WriteAllText(fileName, json);
                 }
                 catch (Exception ex)
                 {
@@ -29,38 +29,37 @@ namespace MedGame.Services
             });
         }
 
-        public async static Task<Player> LoadPlayerFromFile(string userName)
+        public async static Task<player> LoadPlayerFromFile(string fileName)
         {
-            return await Task.Run(async () =>
+            return await Task.Run(() =>
               {
                   try
                   {
-                      string jsonPlayer = File.ReadAllText(userName + ".txt");
-                      Player player = JsonConvert.DeserializeObject<Player>(jsonPlayer);
+                      string jsonPlayer = File.ReadAllText(fileName);
+                      player player = JsonConvert.DeserializeObject<player>(jsonPlayer);
                       player.ListDatesInRow = JsonConvert.DeserializeObject<List<DateTime>>(player.ListDatesInRowString);
 
                       return player;
                   }
                   catch (Exception ex)
                   {
-                      await SavePlayerToFile(GamePlay.Player, userName); // only under development
-                      throw new Exception($"Could not load player {userName} + {ex}");
+                      throw new Exception($"Could not load player {fileName} + {ex}");
                   }
               });
         }
 
-        public static async Task<bool> RemoveUser(string userName)
+        public static async Task<bool> RemoveUser(string fileName)
         {
             return await Task.Run(() =>
             {
                 try
                 {
-                    File.Delete(userName + ".txt");
+                    File.Delete(fileName);
                     return true;
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception($"Could not remove player {userName} {ex}");
+                    throw new Exception($"Could not remove player {fileName} {ex}");
                 }
             });
         }
@@ -71,6 +70,16 @@ namespace MedGame.Services
             Regex appPathMatcher = new Regex(@"(?<!fil)[A-Za-z]:\\+[\S\s]*?(?=\\+bin)");
             var appRoot = appPathMatcher.Match(exePath).Value;
             return appRoot + fileName;
+        }
+
+      
+    }
+
+    public static class MyExtensions
+    {
+        public static string MakeFullFileName(this string file)
+        {
+            return $"{file}.txt";
         }
     }
 }

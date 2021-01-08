@@ -30,30 +30,30 @@ namespace MedGame.Services
             }
         }
 
-        public async Task<Player> SignIn(string email, string password)
+        public async Task<player> SignIn(string email, string password)
         {
             string fullUrl = Url + $"/signin/{email}/{password}";
             HttpResponseMessage httpResponseMessage = await client.GetAsync(fullUrl);
 
             string result = await httpResponseMessage.Content.ReadAsStringAsync();
-            Player playerResult = JsonConvert.DeserializeObject<Player>(result);
+            player playerResult = JsonConvert.DeserializeObject<player>(result);
 
             return playerResult;
         }
 
-        public async Task<Player> SignUp(string email, string password)
+        public async Task<player> SignUp(string email, string password)
         {
             string fullUrl = Url + $"/signup/{email}/{password}";
             HttpResponseMessage httpResponseMessage = await client.GetAsync(fullUrl);
 
             string result = await httpResponseMessage.Content.ReadAsStringAsync();
-            Player playerResult = JsonConvert.DeserializeObject<Player>(result);
+            player playerResult = JsonConvert.DeserializeObject<player>(result);
 
             return playerResult;
         }
 
 
-        public async Task<Player> Update(Player player)
+        public async Task<player> Update(player player)
         {
             string fullUrl = Url;
 
@@ -65,11 +65,11 @@ namespace MedGame.Services
 
             string result = await httpResponseMessage.Content.ReadAsStringAsync();
 
-            Player playerResult = null;
+            player playerResult = null;
 
             try
             {
-                playerResult = JsonConvert.DeserializeObject<Player>(result);
+                playerResult = JsonConvert.DeserializeObject<player>(result);
             }
             catch (Exception ex)
             {

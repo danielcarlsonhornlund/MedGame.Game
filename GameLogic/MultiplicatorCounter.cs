@@ -2,7 +2,7 @@
 {
     public class MultiplicatorCounter
     {
-        public static double CalculateMultiplicator(int totalDaysMieesd, int currentMultiplicatorPoints)
+        public static double CalculateMultiplicator(int totalDaysMieesd, double currentMultiplicatorPoints)
         {
             //Point punishment by reduced multiplicator
             double multiplicatorTemp = 0;
