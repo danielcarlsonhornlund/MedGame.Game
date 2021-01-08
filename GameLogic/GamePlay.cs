@@ -39,8 +39,6 @@ namespace MedGame.GameLogic
 
         public static bool CheckSameDate(DateTime todaysDate)
         {
-            return false;
-
             if (Player.LastDateMeditated.Date == todaysDate)
             {
                 return true;
