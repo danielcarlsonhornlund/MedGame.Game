@@ -38,7 +38,7 @@ namespace MedGame.GameLogic
             player.TotalMinutesMeditated += totalMinutesMeditatedNow;
             player.Points += (int)(totalMinutesMeditatedNow * multiplicator);
             player.TotalMinutesMeditatedNow = 0;
-            player.Multiplicator++;
+            player.Multiplicator += 1;
 
             return player;
         }
