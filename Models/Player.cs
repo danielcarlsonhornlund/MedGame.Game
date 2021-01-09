@@ -21,7 +21,7 @@ namespace MedGame.Models
         public string ListDatesInRowString { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public Levels Level { get; set; } = Levels.Baby;
-        public int Points { get; set; } = 0;
+        public double Points { get; set; } = 0;
         public int TotalMinutesMeditated { get; set; } = 0;
         public int TotalMinutesMeditatedToday { get; set; } = 0;
         public int Health { get; set; } = 72;
@@ -34,6 +34,8 @@ namespace MedGame.Models
         public string PlayerMessage { get; set; } = string.Empty;
         public string HttpResult { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
+
+        [NotMapped]
         public int TotalMinutesMeditatedNow { get; set; } = 0;
     }
 }

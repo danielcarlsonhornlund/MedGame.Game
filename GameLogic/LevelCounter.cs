@@ -5,7 +5,7 @@ namespace MedGame.GameLogic
 {
     public class LevelCounter
     {
-        public static Levels CheckLevel(int playerPoints)
+        public static Levels CheckLevel(double playerPoints)
         {
             if (playerPoints >= 0 && playerPoints <= 10) { return Levels.Baby; }
             else if (playerPoints >= 11 && playerPoints <= 20) { return Levels.Child; }
