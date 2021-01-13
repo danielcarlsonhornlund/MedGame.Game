@@ -7,7 +7,7 @@ namespace MedGame.GameLogic
     {
         public Player CalculateSigninScore(Player player)
         {
-            player.TotalDaysMissed = CalculateMissedDates(player.LastDateMeditated.Date, DateTime.Now.Date);
+            player.TotalDaysMissed = CalculateMissedDates(player.LastDateMeditated, DateTime.Now);
             player.TotalHoursMissed = CalculateMissedHours(DateTime.Now, player.LastDateMeditated);
             player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalDaysMissed, player.Multiplicator);      //Check punishment int/double
             player.Level = LevelCounter.CheckLevel(player.Points);
