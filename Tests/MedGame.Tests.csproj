@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
-    <PackageReference Include="WindowsBase" Version="4.6.1055" />
   </ItemGroup>
 
   <ItemGroup>
